@@ -4,7 +4,7 @@
 <fileserver>
     <servers>
         <SMB enable="true" />
-        <FTP enable="true"/>
+        <FTP enable="false"/>
         <NFS enable="false"/>
     </servers>
     <debug>
@@ -18,7 +18,7 @@
     <SMB>
         <host name="PS2" domain="FILESRV">
             <broadcast>192.168.1.255</broadcast>
-            <smbdialects>LanMan,NT</smbdialects>
+            <smbdialects>SMB1</smbdialects>
             <comment>Java File Server</comment>
 
             <Win32Announce interval="5"/>
@@ -26,87 +26,34 @@
             <!-- Requires running the server using the root account -->
             <tcpipSMB port="1024" platforms="linux,macosx,solaris,windows"/>
 
-            <!-- To run the server using a non-root account on linux, Mac OS X, Solaris -->
-            <!--
-            <netBIOSSMB sessionPort="1139" namePort="1137" datagramPort="1138" platforms="linux,macosx,solaris"/>
-            <tcpipSMB port="1445" platforms="linux,macosx,solaris"/>
-            -->
-
             <hostAnnounce interval="5"/>
-            <!-- <sessionTimeout>15</sessionTimeout> -->
         </host>
-        <sessionDebug flags="Negotiate,Error"/>
+        <sessionDebug flags="Negotiate,Error,Search"/>
 
-        <!--    <netbiosDebug/> -->
-        <!--    <announceDebug/> -->
+        <authenticator>
+            <class>org.filesys.server.auth.LocalAuthenticator</class>
+            <mode>SHARE</mode>
+        </authenticator>
 
-        <users>
-            <user name="PS2">
-                <password>ps2</password>
-                <comment>System administrator</comment>
-                <administrator/>
-            </user>
-            <user name="Guest">
-                <password>guest</password>
-            </user>
-        </users>
 
     </SMB>
 
-    <FTP>
-        <port>1121</port>
-        <NOallowAnonymous/>
-        <debug flags="File,Search,Error,DataPort,Directory,RxData,TxData,SSL"/>
-
-        <!-- Enable FTPS -->
-        <!--
-        <keyStore>/Users/gkspencer/testKeystore</keyStore>
-        <trustStore>/Users/gkspencer/testTruststore</trustStore>
-        <storePassphrase>Roboter79</storePassphrase>
-        <NOrequireSecureSession/>
-        <sslEngineDebug/>
-        -->
-    </FTP>
-
-    <NFS>
-        <enablePortMapper/>
-        <debug flags="Session,Error,File,FileIO"/>
-    </NFS>
-
-    <debug>
-        <output>
-            <class>org.filesys.debug.cluster.ClusterDebug</class>
-            <debugTopic>AlfrescoJLANDebug</debugTopic>
-            <receiveOnly/>
-
-            <localOutput>
-                <class>org.filesys.debug.ConsoleDebug</class>
-                <logFile>jlansrv.log</logFile>
-                <append/>
-            </localOutput>
-        </output>
-    </debug>
-
     <shares>
-        <diskshare name="JFILESHARE" comment="Test share">
+        <diskshare name="PS2 Roms">
             <driver>
                 <class>org.filesys.smb.server.disk.JavaNIODiskDriver</class>
-                <LocalPath>.</LocalPath>
+                <LocalPath>./PS2</LocalPath>
             </driver>
         </diskshare>
-
-
     </shares>
 
+
     <security>
-        <JCEProvider>org.bouncycastle.jce.provider.BouncyCastleProvider</JCEProvider>
-        <!--
-                <authenticator>
-                    <class>org.filesys.server.auth.LocalAuthenticator</class>
-                    <mode>USER</mode>
-                    <allowGuest/>
-                </authenticator>
-        -->
+        <authenticator>
+            <class>org.filesys.server.auth.LocalAuthenticator</class>
+            <mode>SHARE</mode>
+            <allowGuest/>
+        </authenticator>
         <users>
             <user name="PS2">
                 <password>ps2</password>
@@ -117,5 +64,6 @@
                 <password>guest</password>
             </user>
         </users>
+
     </security>
 </fileserver>
