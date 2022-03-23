@@ -16,17 +16,15 @@
     </debug>
 
     <SMB>
-        <host name="JFILESRV" domain="FILESRV">
+        <host name="PS2" domain="FILESRV">
             <broadcast>192.168.1.255</broadcast>
             <smbdialects>LanMan,NT</smbdialects>
             <comment>Java File Server</comment>
 
-            <Win32NetBIOS/>
             <Win32Announce interval="5"/>
 
             <!-- Requires running the server using the root account -->
-            <netBIOSSMB sessionPort="1139" namePort="1137" datagramPort="1138" platforms="linux,macosx,solaris,windows"/>
-            <tcpipSMB port="1445" platforms="linux,macosx,solaris,windows"/>
+            <tcpipSMB port="1024" platforms="linux,macosx,solaris,windows"/>
 
             <!-- To run the server using a non-root account on linux, Mac OS X, Solaris -->
             <!--
@@ -42,22 +40,16 @@
         <!--    <netbiosDebug/> -->
         <!--    <announceDebug/> -->
 
-        <authenticator type="enterprise">
-            <!--
-                    <KDC>192.168.1.240</KDC>
-                    <Realm>WIN2003.STARLASOFT.CO.UK</Realm>
-                    <Password>Autobahn79</Password>
-
-                    <kerberosDebug/>
-
-                    <disableNTLM/>
-            -->
-
-            <mode>USER</mode>
-            <NOallowGuest/>
-
-            <Debug/>
-        </authenticator>
+        <users>
+            <user name="PS2">
+                <password>ps2</password>
+                <comment>System administrator</comment>
+                <administrator/>
+            </user>
+            <user name="Guest">
+                <password>guest</password>
+            </user>
+        </users>
 
     </SMB>
 

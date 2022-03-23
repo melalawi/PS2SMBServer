@@ -51,6 +51,22 @@
             <artifactId>bcprov-jdk15on</artifactId>
             <version>1.64</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>17.0.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
+        <!-- https://itsallbinary.com/apache-commons-compress-sevenzip-unsevenzip-examples-7z/ -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>1.21</version>
+        </dependency>
+
     </dependencies>
 
     <build>
