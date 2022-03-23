@@ -105,7 +105,7 @@ public class SMBConfigSection extends ConfigSection {
 
     //  Flags to indicate if NetBIOS, native TCP/IP SMB and/or Win32 NetBIOS should be enabled
     private boolean m_netBIOSEnable = true;
-    private boolean m_tcpSMBEnable = false;
+    private boolean m_tcpSMBEnable = true;
     private boolean m_win32NBEnable = false;
 
     //  Address to bind the SMB server to, if null all local addresses are used

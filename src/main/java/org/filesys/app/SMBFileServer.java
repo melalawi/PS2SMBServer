@@ -71,7 +71,7 @@ public class SMBFileServer implements ServerListener {
 	private static final String DEFAULT_CONFIGFILENAME = "fileserver.xml";
 
 	// Flag to enable/disable local IP address checking
-	private static final boolean CheckLocalIPAddress = false;
+	private static final boolean CheckLocalIPAddress = true;
 
 	// Server shutdown flag
 	protected static boolean m_shutdown = false;
@@ -420,7 +420,7 @@ public class SMBFileServer implements ServerListener {
 		if ( cmdLineArgs.length < 1) {
 
 			// Search for a default configuration file in the users home directory
-			fileName = System.getProperty("user.home") + File.separator + DEFAULT_CONFIGFILENAME;
+			fileName = System.getProperty("user.dir") + File.separator + DEFAULT_CONFIGFILENAME;
 		}
 		else
 			fileName = cmdLineArgs[0];

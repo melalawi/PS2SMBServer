@@ -133,11 +133,14 @@ public class JavaNIODeviceContext extends DiskDeviceContext {
 
                 // Use/create a folder within the shared folder as the trashcan folder
                 File trashDir = new File( rootDir, TrashcanFolderName);
-                if ( trashDir.exists() == false) {
+                if (trashDir.exists() == false) {
 
                     // Create the trashcan folder
-                    if (trashDir.mkdir() == false)
-                        throw new DeviceContextException("Failed to create trashcan folder - " + trashDir.getAbsolutePath());
+                    try {
+                        Files.createDirectories(trashDir.toPath());
+                    } catch (IOException e) {
+                        throw new DeviceContextException("Failed to create trashcan folder", e);
+                    }
                 }
 
                 // Set the trashcan path
