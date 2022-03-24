@@ -1850,6 +1850,11 @@ public class NTProtocolHandler extends CoreProtocolHandler {
 
         // Extract the filename string
         String fileName = parser.unpackString(parser.isUnicode());
+        // Debug
+        if (Debug.EnableInfo && m_sess.hasDebug(SMBSrvSession.DBG_FILE))
+            m_sess.debugPrintln("procOpenAndX [" + fileName + "] params=");
+
+
         if (fileName == null) {
             m_sess.sendErrorResponseSMB(smbPkt, SMBStatus.DOSInvalidData, SMBStatus.ErrDos);
             return;
@@ -4740,6 +4745,9 @@ public class NTProtocolHandler extends CoreProtocolHandler {
         // Extract the filename string
         String fileName = DataPacker.getUnicodeString(parser.getBuffer(), DataPacker.wordAlign(parser.getByteOffset()),
                 nameLen / 2);
+
+        m_sess.debugPrintln("Read file attempt [" + fileName + "] ");
+
         if (fileName == null) {
             m_sess.sendErrorResponseSMB(smbPkt, SMBStatus.NTInvalidParameter, SMBStatus.SRVNonSpecificError, SMBStatus.ErrSrv);
             return;
@@ -4816,21 +4824,24 @@ public class NTProtocolHandler extends CoreProtocolHandler {
         OpLockDetails oplock = null;
 
         try {
-
+            String finalPath = params.getFullPath().replace("iso", "7z");
             // Check if the requested file already exists
-            FileStatus fileSts = disk.fileExists(m_sess, conn, params.getFullPath());
+            FileStatus fileStsIso = disk.fileExists(m_sess, conn, params.getFullPath());
+            FileStatus fileSts7z = disk.fileExists(m_sess, conn, params.getFullPath().replace("iso", "7z"));
 
             // Check if the path is to a folder, make sure the Directory flag is set in the open parameters for oplock checking
-            if (params.isDirectory() == false && fileSts == FileStatus.DirectoryExists) {
+            if (params.isDirectory() == false && fileStsIso == FileStatus.DirectoryExists) {
                 params.setCreateOption(WinNT.CreateDirectory);
             }
+
+            FileStatus fileSts = fileStsIso == FileStatus.NotExist ? fileSts7z : fileStsIso;
 
             // Check if the file exists and it is a pseudo file, in which case the file already exists so change a create request to
             // an open request
             if (fileSts == FileStatus.FileExists) {
 
                 // Check for a pseudo file
-                FileInfo finfo = disk.getFileInformation(m_sess, conn, params.getFullPath());
+                FileInfo finfo = disk.getFileInformation(m_sess, conn, finalPath);
                 if (finfo != null && finfo.isPseudoFile()) {
                     createDisp = CreateDisposition.OPEN;
 
@@ -4975,6 +4986,9 @@ public class NTProtocolHandler extends CoreProtocolHandler {
 
                 // Check if the filesystem supports oplocks, check if there is an oplock on the file
                 OpLockHelper.checkOpLock(m_sess, smbPkt, disk, params, conn);
+
+                FileOpenParams params7z = new FileOpenParams(fileName.replace("iso", "7z"), createDisp, accessMask, attrib, shrAccess, allocSize, createOptn,
+                        rootFID, impersonLev, secFlags, parser.getProcessIdFull());
 
                 // Open the requested file/directory
                 netFile = disk.openFile(m_sess, conn, params);
@@ -6684,6 +6698,7 @@ public class NTProtocolHandler extends CoreProtocolHandler {
                 break;
 
             // Tree connect
+            // FIRST STEP
             case PacketTypeV1.TreeConnectAndX:
                 procTreeConnectAndX(smbPkt, parser);
                 break;

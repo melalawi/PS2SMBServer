@@ -58,6 +58,17 @@
             <artifactId>javafx-controls</artifactId>
             <version>17.0.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-media</artifactId>
+            <version>17.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>1.9</version>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
         <!-- https://itsallbinary.com/apache-commons-compress-sevenzip-unsevenzip-examples-7z/ -->
@@ -66,6 +77,12 @@
             <artifactId>commons-compress</artifactId>
             <version>1.21</version>
         </dependency>
+        <dependency>
+            <groupId>org.tukaani</groupId>
+            <artifactId>xz</artifactId>
+            <version>1.9</version>
+        </dependency>
+
 
     </dependencies>
 
@@ -186,6 +203,14 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
 
             <!-- Nexus staging -->
 <!--            <plugin>-->
@@ -272,6 +297,10 @@
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
         </repository>
     </repositories>
 

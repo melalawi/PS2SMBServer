@@ -122,6 +122,7 @@ public class TreeConnection {
             m_files = newFiles;
         }
 
+
         //	Inform listeners that a file has been opened
         NetworkFileServer fileSrv = (NetworkFileServer) sess.getServer();
         if (fileSrv != null)

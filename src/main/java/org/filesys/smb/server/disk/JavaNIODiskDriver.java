@@ -696,9 +696,6 @@ public class JavaNIODiskDriver implements DiskInterface {
 
             //  Create the file object for the mapped file and check if the file exists
             filePath = Paths.get( mappedPath);
-
-            if ( Files.exists( filePath) == false)
-                throw new FileNotFoundException(filePath.toString());
         }
 
         //	Check if the file is read-only and write access has been requested
@@ -728,7 +725,7 @@ public class JavaNIODiskDriver implements DiskInterface {
     }
 
     /**
-     * Read a block of data from a file
+     * Read a block of data from a file TODO RIGHT HERE BITCH
      *
      * @param sess    Session details
      * @param tree    Tree connection
@@ -742,6 +739,8 @@ public class JavaNIODiskDriver implements DiskInterface {
      */
     public int readFile(SrvSession sess, TreeConnection tree, NetworkFile file, byte[] buf, int bufPos, int siz, long filePos)
             throws java.io.IOException {
+
+        System.out.println("Reading " + file.getName());
 
         //	Check if the file is a directory
         if (file.isDirectory())
@@ -977,6 +976,8 @@ public class JavaNIODiskDriver implements DiskInterface {
      */
     public int writeFile(SrvSession sess, TreeConnection tree, NetworkFile file, byte[] buf, int bufoff, int siz, long fileoff)
             throws java.io.IOException {
+
+        System.out.println("Writing " + file.getName());
 
         //	Check if the file is a directory
         if (file.isDirectory())

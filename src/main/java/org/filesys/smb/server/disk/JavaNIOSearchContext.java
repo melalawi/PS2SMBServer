@@ -297,17 +297,26 @@ public class JavaNIOSearchContext extends SearchContext {
                             fattr += FileAttribute.Hidden;
                     }
 
+                    String fileName = curPath.getFileName().toString();
+                    // lmao
+                    if (fileName.endsWith("7z")) {
+                        fileName = fileName.replace("7z", "iso");
+                    }
+
                     //  Create the file information object
-                    info.setFileName(curPath.getFileName().toString());
+                    info.setFileName(fileName);
                     info.setSize(flen);
                     info.setAllocationSize( falloc);
                     info.setFileAttributes(fattr);
 
                     // Build the share relative file path to generate the file id
                     StringBuffer relPath = new StringBuffer();
-                    relPath.append(m_relPath);
-                    relPath.append(curPath.getFileName().toString());
 
+                    relPath.append(m_relPath);
+
+                    System.out.println("RETURNING " + fileName);
+
+                    relPath.append(fileName);
                     info.setFileId(relPath.toString().hashCode());
 
                     // Set the file timestamps
@@ -346,9 +355,10 @@ public class JavaNIOSearchContext extends SearchContext {
         // Check for a single path search
         if ( isSingleFileSearch()) {
 
-            if ( m_idx++ == 0)
+            if ( m_idx++ == 0) {
+                System.out.println("NEXT FILE NAME IS " + m_root.getFileName().toString());
                 return m_root.getFileName().toString();
-            else
+            } else
                 return null;
         }
         else if ( m_pathIter != null && m_pathIter.hasNext()) {
@@ -359,6 +369,9 @@ public class JavaNIOSearchContext extends SearchContext {
             while ( curPath != null) {
 
                 String fName = curPath.getFileName().toString();
+
+                System.out.println("NEXT fName IS " + fName);
+
                 if ( m_wildcard.matchesPattern( fName)) {
                     m_idx++;
                     return fName;
