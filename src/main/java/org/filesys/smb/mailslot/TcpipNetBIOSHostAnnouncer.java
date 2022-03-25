@@ -19,14 +19,10 @@
 
 package org.filesys.smb.mailslot;
 
+import org.filesys.netbios.*;
+
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-
-import org.filesys.netbios.NetBIOSDatagram;
-import org.filesys.netbios.NetBIOSDatagramSocket;
-import org.filesys.netbios.NetBIOSName;
-import org.filesys.netbios.NetworkSettings;
-import org.filesys.netbios.RFCNetBIOSProtocol;
 
 /**
  * <p>TCP/IP NetBIOS host announcer implementation. Periodically broadcasts a host announcement datagram to inform other

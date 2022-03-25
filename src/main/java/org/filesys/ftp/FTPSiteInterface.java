@@ -19,10 +19,10 @@
 
 package org.filesys.ftp;
 
-import java.io.IOException;
-
 import org.filesys.server.config.ServerConfiguration;
 import org.springframework.extensions.config.ConfigElement;
+
+import java.io.IOException;
 
 /**
  * FTP SITE Command Interface

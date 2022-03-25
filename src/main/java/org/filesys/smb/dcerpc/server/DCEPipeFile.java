@@ -20,11 +20,11 @@
 
 package org.filesys.smb.dcerpc.server;
 
-import java.io.IOException;
-
 import org.filesys.server.filesys.NetworkFile;
 import org.filesys.smb.dcerpc.DCEBuffer;
 import org.filesys.smb.dcerpc.DCEPipeType;
+
+import java.io.IOException;
 
 /**
  * DCE/RPC Pipe File Class

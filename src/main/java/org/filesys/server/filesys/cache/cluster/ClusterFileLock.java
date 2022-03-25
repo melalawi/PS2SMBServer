@@ -19,9 +19,9 @@
 
 package org.filesys.server.filesys.cache.cluster;
 
-import java.io.Serializable;
-
 import org.filesys.locking.FileLock;
+
+import java.io.Serializable;
 
 /**
  * Cluster File Lock

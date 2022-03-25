@@ -19,8 +19,6 @@
 
 package org.filesys.server.auth.passthru;
 
-import java.io.IOException;
-
 import org.filesys.netbios.NetBIOSSession;
 import org.filesys.netbios.NetworkSession;
 import org.filesys.netbios.RFCNetBIOSProtocol;
@@ -28,6 +26,8 @@ import org.filesys.smb.PacketTypeV1;
 import org.filesys.smb.SMBException;
 import org.filesys.smb.SMBStatus;
 import org.filesys.util.DataPacker;
+
+import java.io.IOException;
 
 /**
  * SMB packet type class

@@ -19,14 +19,13 @@
 
 package org.filesys.client;
 
-import java.io.*;
-
 import org.filesys.debug.Debug;
 import org.filesys.netbios.NetworkSession;
 import org.filesys.smb.*;
-import org.filesys.smb.PacketTypeV1;
 import org.filesys.util.DataPacker;
 import org.filesys.util.HexDump;
+
+import java.io.IOException;
 
 /**
  * Authenticate Session Class

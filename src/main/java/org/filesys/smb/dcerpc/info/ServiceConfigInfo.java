@@ -19,14 +19,14 @@
 
 package org.filesys.smb.dcerpc.info;
 
-import java.io.*;
-import java.util.*;
-
 import org.filesys.smb.dcerpc.DCEBuffer;
 import org.filesys.smb.dcerpc.DCEBufferException;
 import org.filesys.smb.dcerpc.DCEReadable;
 import org.filesys.smb.dcerpc.DCEWriteable;
 import org.filesys.util.StringList;
+
+import java.io.UnsupportedEncodingException;
+import java.util.StringTokenizer;
 
 /**
  * Service Configuration Information Class

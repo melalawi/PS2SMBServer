@@ -19,15 +19,11 @@
 
 package org.filesys.ftp;
 
-import java.net.InetAddress;
-
+import org.filesys.server.config.*;
 import org.springframework.extensions.config.ConfigElement;
 import org.springframework.extensions.config.element.GenericConfigElement;
-import org.filesys.server.config.ConfigId;
-import org.filesys.server.config.ConfigSection;
-import org.filesys.server.config.ConfigurationListener;
-import org.filesys.server.config.InvalidConfigurationException;
-import org.filesys.server.config.ServerConfiguration;
+
+import java.net.InetAddress;
 
 /**
  * FTP Server Configuration Section Class

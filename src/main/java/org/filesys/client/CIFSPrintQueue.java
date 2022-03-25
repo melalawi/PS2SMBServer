@@ -19,8 +19,8 @@
 
 package org.filesys.client;
 
-import org.filesys.client.info.PrintQueueEnumerator;
 import org.filesys.client.info.PrintJob;
+import org.filesys.client.info.PrintQueueEnumerator;
 
 /**
  * SMB CIFS protocol print queue class

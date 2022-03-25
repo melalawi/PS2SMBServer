@@ -19,29 +19,19 @@
 
 package org.filesys.client.admin;
 
-import java.io.*;
-import java.util.*;
-
 import org.filesys.client.IPCSession;
 import org.filesys.smb.SMBException;
 import org.filesys.smb.SMBStatus;
-import org.filesys.smb.dcerpc.DCEBuffer;
-import org.filesys.smb.dcerpc.DCEBufferException;
-import org.filesys.smb.dcerpc.DCEException;
-import org.filesys.smb.dcerpc.PolicyHandle;
-import org.filesys.smb.dcerpc.PolicyHandleCache;
+import org.filesys.smb.dcerpc.*;
 import org.filesys.smb.dcerpc.client.DCEPacket;
 import org.filesys.smb.dcerpc.client.SIDCache;
 import org.filesys.smb.dcerpc.client.Samr;
 import org.filesys.smb.dcerpc.info.UserInfo;
-import org.filesys.smb.nt.LoadException;
-import org.filesys.smb.nt.RID;
-import org.filesys.smb.nt.RIDList;
-import org.filesys.smb.nt.SID;
-import org.filesys.smb.nt.SaveException;
-import org.filesys.smb.nt.WellKnownRID;
-import org.filesys.smb.nt.WellKnownSID;
+import org.filesys.smb.nt.*;
 import org.filesys.util.StringList;
+
+import java.io.IOException;
+import java.util.Enumeration;
 
 /**
  * Security Accounts Manager Pipe File Class

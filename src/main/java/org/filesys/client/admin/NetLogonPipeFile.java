@@ -19,14 +19,14 @@
 
 package org.filesys.client.admin;
 
-import java.io.*;
-
 import org.filesys.client.IPCSession;
 import org.filesys.smb.SMBException;
 import org.filesys.smb.dcerpc.DCEBuffer;
 import org.filesys.smb.dcerpc.DCEBufferException;
 import org.filesys.smb.dcerpc.client.DCEPacket;
 import org.filesys.smb.dcerpc.client.NetLogon;
+
+import java.io.IOException;
 
 /**
  * NetLogon Pipe File Class

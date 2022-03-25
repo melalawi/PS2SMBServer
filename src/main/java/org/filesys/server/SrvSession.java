@@ -19,14 +19,14 @@
 
 package org.filesys.server;
 
-import java.net.InetAddress;
-
 import org.filesys.debug.Debug;
 import org.filesys.server.auth.AuthContext;
 import org.filesys.server.auth.ClientInfo;
 import org.filesys.server.core.SharedDevice;
 import org.filesys.server.core.SharedDeviceList;
 import org.filesys.server.filesys.TransactionalFilesystemInterface;
+
+import java.net.InetAddress;
 
 /**
  * Server Session Base Class

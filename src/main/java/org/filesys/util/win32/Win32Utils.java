@@ -21,13 +21,12 @@
 package org.filesys.util.win32;
 
 import com.sun.jna.platform.win32.BaseTSD.SIZE_T;
+import com.sun.jna.platform.win32.Kernel32;
+import com.sun.jna.platform.win32.Mpr;
 import com.sun.jna.platform.win32.WinNT.HANDLE;
-
 import com.sun.jna.platform.win32.Winnetwk.ConnectFlag;
 import com.sun.jna.platform.win32.Winnetwk.NETRESOURCE;
 import com.sun.jna.platform.win32.Winnetwk.RESOURCETYPE;
-import com.sun.jna.platform.win32.Mpr;
-import com.sun.jna.platform.win32.Kernel32;
 
 /**
  * Win32 Specific Utility Class

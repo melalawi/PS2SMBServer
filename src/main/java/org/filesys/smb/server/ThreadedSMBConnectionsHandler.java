@@ -18,10 +18,6 @@
  */
 package org.filesys.smb.server;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.filesys.debug.Debug;
 import org.filesys.server.SessionHandlerInterface;
 import org.filesys.server.SessionHandlerList;
@@ -30,6 +26,10 @@ import org.filesys.server.config.InvalidConfigurationException;
 import org.filesys.smb.mailslot.HostAnnouncer;
 import org.filesys.smb.mailslot.TcpipNetBIOSHostAnnouncer;
 import org.filesys.util.PlatformType;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Threaded SMB Connectins Handler Class

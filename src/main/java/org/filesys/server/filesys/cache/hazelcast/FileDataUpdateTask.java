@@ -19,11 +19,10 @@
 
 package org.filesys.server.filesys.cache.hazelcast;
 
+import com.hazelcast.core.IMap;
 import org.filesys.debug.Debug;
 import org.filesys.server.filesys.cache.cluster.ClusterFileState;
 import org.filesys.server.filesys.cache.cluster.ClusterNode;
-
-import com.hazelcast.core.IMap;
 
 /**
  * File Data Update Remote Task Class

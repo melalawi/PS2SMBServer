@@ -19,19 +19,14 @@
 
 package org.filesys.server.auth;
 
+import org.filesys.debug.Debug;
+
+import javax.crypto.*;
+import javax.crypto.spec.SecretKeySpec;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
-import javax.crypto.BadPaddingException;
-import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.Mac;
-import javax.crypto.NoSuchPaddingException;
-import javax.crypto.spec.SecretKeySpec;
-
-import org.filesys.debug.Debug;
 
 /**
  * Password Encryptor Class

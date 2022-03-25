@@ -19,14 +19,14 @@
 
 package org.filesys.server.filesys.pseudo;
 
-import java.io.IOException;
-
 import org.filesys.server.filesys.FileInfo;
 import org.filesys.server.filesys.NetworkFile;
 import org.filesys.server.filesys.cache.FileState;
 import org.filesys.server.filesys.cache.LocalFileState;
 import org.filesys.server.filesys.cache.NetworkFileStateInterface;
 import org.filesys.smb.SeekType;
+
+import java.io.IOException;
 
 /**
  * In Memory Network File Class

@@ -19,8 +19,6 @@
 
 package org.filesys.server.filesys.db;
 
-import java.io.File;
-
 import org.filesys.debug.Debug;
 import org.filesys.server.config.CoreServerConfigSection;
 import org.filesys.server.config.InvalidConfigurationException;
@@ -42,6 +40,8 @@ import org.filesys.server.locking.OpLockManager;
 import org.filesys.server.thread.ThreadRequestPool;
 import org.filesys.util.MemorySize;
 import org.springframework.extensions.config.ConfigElement;
+
+import java.io.File;
 
 /**
  * Database Device Context Class

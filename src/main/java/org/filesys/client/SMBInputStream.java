@@ -19,10 +19,10 @@
 
 package org.filesys.client;
 
-import java.io.*;
-
 import org.filesys.smb.SMBException;
 import org.filesys.smb.SeekType;
+
+import java.io.IOException;
 
 /**
  * SMB input stream class.

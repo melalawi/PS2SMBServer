@@ -19,9 +19,10 @@
 
 package org.filesys.client.admin;
 
-import java.util.*;
-
 import org.filesys.util.DataPacker;
+
+import java.util.Date;
+import java.util.Vector;
 
 /**
  * SMB data decoder class

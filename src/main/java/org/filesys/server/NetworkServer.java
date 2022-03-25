@@ -19,10 +19,6 @@
 
 package org.filesys.server;
 
-import java.net.InetAddress;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.filesys.server.auth.acl.AccessControlManager;
 import org.filesys.server.config.GlobalConfigSection;
 import org.filesys.server.config.SecurityConfigSection;
@@ -31,6 +27,10 @@ import org.filesys.server.core.ShareMapper;
 import org.filesys.server.core.ShareType;
 import org.filesys.server.core.SharedDevice;
 import org.filesys.server.core.SharedDeviceList;
+
+import java.net.InetAddress;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Network Server Base Class

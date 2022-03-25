@@ -19,14 +19,14 @@
 
 package org.filesys.sample;
 
-import java.security.MessageDigest;
-
 import org.filesys.debug.Debug;
 import org.filesys.server.filesys.DiskDeviceContext;
 import org.filesys.server.filesys.cache.FileState;
 import org.filesys.server.filesys.loader.FileProcessor;
 import org.filesys.server.filesys.loader.FileSegment;
 import org.filesys.util.HexDump;
+
+import java.security.MessageDigest;
 
 /**
  * MD5 Checksum File Processor Class

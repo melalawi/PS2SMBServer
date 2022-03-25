@@ -20,35 +20,6 @@
 
 package org.filesys.server.auth;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.nio.file.Files;
-import java.nio.file.LinkOption;
-import java.nio.file.Paths;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.security.Principal;
-import java.security.PrivilegedAction;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.StringTokenizer;
-import java.util.zip.CRC32;
-
-import javax.crypto.Cipher;
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
-import javax.security.auth.Subject;
-import javax.security.auth.callback.Callback;
-import javax.security.auth.callback.CallbackHandler;
-import javax.security.auth.callback.NameCallback;
-import javax.security.auth.callback.PasswordCallback;
-import javax.security.auth.callback.UnsupportedCallbackException;
-import javax.security.auth.login.LoginContext;
-import javax.security.auth.login.LoginException;
-import javax.security.sasl.RealmCallback;
-
 import org.filesys.debug.Debug;
 import org.filesys.netbios.RFCNetBIOSProtocol;
 import org.filesys.server.auth.kerberos.KerberosDetails;
@@ -67,8 +38,32 @@ import org.filesys.smb.server.*;
 import org.filesys.util.DataBuffer;
 import org.filesys.util.DataPacker;
 import org.filesys.util.HexDump;
-import org.springframework.extensions.config.ConfigElement;
 import org.ietf.jgss.Oid;
+import org.springframework.extensions.config.ConfigElement;
+
+import javax.crypto.Cipher;
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+import javax.security.auth.Subject;
+import javax.security.auth.callback.*;
+import javax.security.auth.login.LoginContext;
+import javax.security.auth.login.LoginException;
+import javax.security.sasl.RealmCallback;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Paths;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.Principal;
+import java.security.PrivilegedAction;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.StringTokenizer;
+import java.util.zip.CRC32;
 
 /**
  * Enterprise SMB Authenticator Class

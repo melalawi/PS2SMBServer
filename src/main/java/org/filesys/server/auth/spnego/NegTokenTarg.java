@@ -20,18 +20,13 @@
 
 package org.filesys.server.auth.spnego;
 
-import java.io.IOException;
-
 import org.filesys.server.auth.SecurityBlob;
-import org.filesys.server.auth.asn.DERBuffer;
-import org.filesys.server.auth.asn.DEREnumerated;
-import org.filesys.server.auth.asn.DERObject;
-import org.filesys.server.auth.asn.DEROctetString;
-import org.filesys.server.auth.asn.DEROid;
-import org.filesys.server.auth.asn.DERSequence;
+import org.filesys.server.auth.asn.*;
 import org.filesys.util.HexDump;
 import org.ietf.jgss.GSSException;
 import org.ietf.jgss.Oid;
+
+import java.io.IOException;
 
 /**
  * NegTokenTarg Class

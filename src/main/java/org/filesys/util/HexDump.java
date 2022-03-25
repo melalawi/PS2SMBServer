@@ -20,12 +20,12 @@
 
 package org.filesys.util;
 
+import org.filesys.debug.DebugInterface;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import org.filesys.debug.DebugInterface;
 
 
 /**

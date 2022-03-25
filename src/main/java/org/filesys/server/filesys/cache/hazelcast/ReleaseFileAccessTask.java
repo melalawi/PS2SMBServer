@@ -19,14 +19,13 @@
 
 package org.filesys.server.filesys.cache.hazelcast;
 
+import com.hazelcast.core.IMap;
+import com.hazelcast.core.ITopic;
 import org.filesys.debug.Debug;
 import org.filesys.server.filesys.FileAccessToken;
 import org.filesys.server.filesys.cache.cluster.ClusterFileState;
 import org.filesys.smb.OpLockType;
 import org.filesys.smb.SharingMode;
-
-import com.hazelcast.core.IMap;
-import com.hazelcast.core.ITopic;
 
 /**
  * Release File Access Task Class

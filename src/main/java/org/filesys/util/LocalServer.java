@@ -19,15 +19,15 @@
 
 package org.filesys.util;
 
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-
 import com.sun.jna.platform.win32.Kernel32Util;
 import com.sun.jna.platform.win32.Netapi32Util;
 import org.filesys.netbios.NetBIOSName;
 import org.filesys.netbios.NetBIOSNameList;
 import org.filesys.netbios.NetBIOSSession;
+
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 
 /**

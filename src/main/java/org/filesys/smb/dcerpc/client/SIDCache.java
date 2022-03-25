@@ -19,9 +19,10 @@
 
 package org.filesys.smb.dcerpc.client;
 
-import java.util.*;
-
 import org.filesys.smb.nt.SID;
+
+import java.util.Enumeration;
+import java.util.Hashtable;
 
 /**
  * SID Cache Class

@@ -19,14 +19,13 @@
 
 package org.filesys.client;
 
-import java.io.*;
-
 import org.filesys.client.info.FileInfo;
 import org.filesys.client.info.ReparsePointFileInfo;
 import org.filesys.server.filesys.FileAttribute;
 import org.filesys.smb.*;
-import org.filesys.smb.PacketTypeV1;
 import org.filesys.util.DataBuffer;
+
+import java.io.IOException;
 
 /**
  * SMB transact protocol search context class

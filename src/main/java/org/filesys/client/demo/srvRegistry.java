@@ -19,9 +19,6 @@
 
 package org.filesys.client.demo;
 
-import java.io.*;
-import java.util.*;
-
 import org.filesys.client.SessionFactory;
 import org.filesys.client.admin.AdminSession;
 import org.filesys.client.admin.WinregPipeFile;
@@ -33,6 +30,10 @@ import org.filesys.smb.dcerpc.info.RegistryValue;
 import org.filesys.util.HexDump;
 import org.filesys.util.NameValue;
 import org.filesys.util.NameValueList;
+
+import java.io.IOException;
+import java.io.PrintStream;
+import java.util.List;
 
 /**
  * srvRegistry Application

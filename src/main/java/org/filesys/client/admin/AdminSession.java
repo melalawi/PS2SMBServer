@@ -18,47 +18,25 @@
  */
 
 package org.filesys.client.admin;
- 
-import java.util.*;
-import java.io.*;
 
-import org.filesys.client.SMBPacket;
-import org.filesys.client.SessionFactory;
-import org.filesys.client.info.PrintQueueInfo;
-import org.filesys.client.info.RAPServerInfo;
-import org.filesys.client.info.RAPShareInfo;
-import org.filesys.client.info.ServerList;
 import org.filesys.client.IPCSession;
+import org.filesys.client.SMBPacket;
 import org.filesys.client.Session;
-import org.filesys.client.info.PrintJob;
-import org.filesys.client.info.PrintJobList;
-import org.filesys.client.info.PrinterList;
-import org.filesys.client.info.RAPServiceInfo;
-import org.filesys.client.info.RAPSessionInfo;
-import org.filesys.client.info.RAPUserInfo;
-import org.filesys.client.info.RAPWorkstationInfo;
+import org.filesys.client.SessionFactory;
+import org.filesys.client.info.*;
 import org.filesys.smb.*;
-import org.filesys.smb.PacketTypeV1;
-import org.filesys.smb.dcerpc.DCEBuffer;
-import org.filesys.smb.dcerpc.DCEBufferException;
-import org.filesys.smb.dcerpc.DCEException;
-import org.filesys.smb.dcerpc.DCEPipeType;
-import org.filesys.smb.dcerpc.PolicyHandle;
+import org.filesys.smb.dcerpc.*;
 import org.filesys.smb.dcerpc.client.DCEPacket;
-import org.filesys.smb.dcerpc.info.ServerInfo;
-import org.filesys.smb.dcerpc.info.SessionInfo;
-import org.filesys.smb.dcerpc.info.SessionInfoList;
-import org.filesys.smb.dcerpc.info.ShareInfo;
-import org.filesys.smb.dcerpc.info.ShareInfoList;
-import org.filesys.smb.dcerpc.info.UserInfo;
-import org.filesys.smb.dcerpc.info.WorkstationInfo;
-import org.filesys.smb.nt.RID;
-import org.filesys.smb.nt.RIDList;
-import org.filesys.smb.nt.SID;
-import org.filesys.smb.nt.WellKnownRID;
-import org.filesys.smb.nt.WellKnownSID;
+import org.filesys.smb.dcerpc.info.*;
+import org.filesys.smb.nt.*;
 import org.filesys.util.DataPacker;
 import org.filesys.util.StringList;
+
+import java.io.IOException;
+import java.util.Date;
+import java.util.Enumeration;
+import java.util.Hashtable;
+import java.util.Vector;
 
 /**
  * SMB admin session class

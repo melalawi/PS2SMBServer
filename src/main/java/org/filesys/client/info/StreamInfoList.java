@@ -19,7 +19,8 @@
 
 package org.filesys.client.info;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Stream Information List Class

@@ -19,8 +19,6 @@
 
 package org.filesys.client.admin;
 
-import java.io.IOException;
-
 import org.filesys.client.IPCSession;
 import org.filesys.smb.SMBException;
 import org.filesys.smb.dcerpc.DCEBuffer;
@@ -28,6 +26,8 @@ import org.filesys.smb.dcerpc.DCEBufferException;
 import org.filesys.smb.dcerpc.Wkssvc;
 import org.filesys.smb.dcerpc.client.DCEPacket;
 import org.filesys.smb.dcerpc.info.WorkstationInfo;
+
+import java.io.IOException;
 
 /**
  * Workstation Service Pipe File Class

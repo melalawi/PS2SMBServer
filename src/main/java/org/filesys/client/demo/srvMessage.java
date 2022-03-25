@@ -19,11 +19,11 @@
 
 package org.filesys.client.demo;
 
-import java.io.*;
-
 import org.filesys.client.SessionFactory;
 import org.filesys.util.NameValue;
 import org.filesys.util.NameValueList;
+
+import java.io.PrintStream;
 
 /**
  * srvMessage Application

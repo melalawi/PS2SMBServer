@@ -20,8 +20,6 @@
 
 package org.filesys.smb.server;
 
-import java.io.IOException;
-
 import org.filesys.server.RequestPostProcessor;
 import org.filesys.server.SrvSession;
 import org.filesys.server.auth.ISMBAuthenticator;
@@ -31,6 +29,8 @@ import org.filesys.server.locking.LocalOpLockDetails;
 import org.filesys.smb.Dialect;
 import org.filesys.smb.server.notify.NotifyChangeEvent;
 import org.filesys.smb.server.notify.NotifyRequest;
+
+import java.io.IOException;
 
 /**
  * Protocol handler abstract base class.

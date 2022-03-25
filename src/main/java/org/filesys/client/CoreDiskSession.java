@@ -24,7 +24,6 @@ import org.filesys.client.info.FileInfo;
 import org.filesys.client.info.VolumeInfo;
 import org.filesys.server.filesys.AccessMode;
 import org.filesys.smb.*;
-import org.filesys.smb.PacketTypeV1;
 
 /**
  * SMB core disk session class

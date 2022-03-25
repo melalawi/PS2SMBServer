@@ -19,9 +19,6 @@
 
 package org.filesys.smb.server;
 
-import java.io.IOException;
-import java.util.Enumeration;
-
 import org.filesys.debug.Debug;
 import org.filesys.server.core.ShareType;
 import org.filesys.server.core.SharedDevice;
@@ -30,6 +27,9 @@ import org.filesys.smb.PacketTypeV1;
 import org.filesys.smb.SMBStatus;
 import org.filesys.smb.TransactBuffer;
 import org.filesys.util.DataBuffer;
+
+import java.io.IOException;
+import java.util.Enumeration;
 
 /**
  * IPC$ Transaction handler for \PIPE\LANMAN requests.

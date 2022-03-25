@@ -19,9 +19,7 @@
 
 package org.filesys.debug.cluster;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
-
+import com.hazelcast.core.*;
 import org.filesys.debug.DebugInterface;
 import org.filesys.debug.DebugInterfaceBase;
 import org.filesys.server.config.InvalidConfigurationException;
@@ -29,11 +27,8 @@ import org.filesys.server.config.ServerConfiguration;
 import org.filesys.server.filesys.cache.hazelcast.ClusterConfigSection;
 import org.springframework.extensions.config.ConfigElement;
 
-import com.hazelcast.core.HazelcastInstance;
-import com.hazelcast.core.ITopic;
-import com.hazelcast.core.Member;
-import com.hazelcast.core.Message;
-import com.hazelcast.core.MessageListener;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
 /**
  * Cluster Debug Interface Class

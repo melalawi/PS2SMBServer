@@ -20,13 +20,13 @@
 
 package org.filesys.server.filesys;
 
-import java.io.IOException;
-import java.util.EnumSet;
-import java.util.Set;
-
 import org.filesys.locking.FileLock;
 import org.filesys.locking.FileLockList;
 import org.filesys.server.locking.OpLockDetails;
+
+import java.io.IOException;
+import java.util.EnumSet;
+import java.util.Set;
 
 /**
  * <p>

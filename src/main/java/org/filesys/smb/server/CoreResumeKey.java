@@ -19,9 +19,9 @@
 
 package org.filesys.smb.server;
 
-import java.io.PrintStream;
-
 import org.filesys.util.DataPacker;
+
+import java.io.PrintStream;
 
 /**
  * Core protocol search resume key.

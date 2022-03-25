@@ -19,13 +19,13 @@
 
 package org.filesys.smb.server;
 
-import java.io.IOException;
-
 import org.filesys.netbios.RFCNetBIOSProtocol;
 import org.filesys.smb.PacketTypeV1;
 import org.filesys.smb.TransactBuffer;
 import org.filesys.util.DataBuffer;
 import org.filesys.util.DataPacker;
+
+import java.io.IOException;
 
 /**
  * SMB server transact packet class

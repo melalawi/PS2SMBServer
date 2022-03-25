@@ -19,8 +19,6 @@
 
 package org.filesys.client.demo;
 
-import java.io.*;
-
 import org.filesys.client.*;
 import org.filesys.client.smb.DirectoryWatcher;
 import org.filesys.server.filesys.AccessMode;
@@ -31,6 +29,9 @@ import org.filesys.smb.PCShare;
 import org.filesys.smb.SharingMode;
 import org.filesys.util.NameValue;
 import org.filesys.util.NameValueList;
+
+import java.io.IOException;
+import java.io.PrintStream;
 
 /**
  * srvWatch Application

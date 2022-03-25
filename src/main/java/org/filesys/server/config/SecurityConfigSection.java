@@ -19,11 +19,6 @@
 
 package org.filesys.server.config;
 
-import java.security.Provider;
-import java.security.Security;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.filesys.server.auth.DefaultUsersInterface;
 import org.filesys.server.auth.UserAccountList;
 import org.filesys.server.auth.UsersInterface;
@@ -34,6 +29,11 @@ import org.filesys.server.core.ShareMapper;
 import org.filesys.server.filesys.DefaultShareMapper;
 import org.springframework.extensions.config.ConfigElement;
 import org.springframework.extensions.config.element.GenericConfigElement;
+
+import java.security.Provider;
+import java.security.Security;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Server Security Configuration Section Class

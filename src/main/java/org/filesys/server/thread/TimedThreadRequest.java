@@ -19,9 +19,9 @@
 
 package org.filesys.server.thread;
 
-import java.util.Date;
-
 import org.filesys.debug.Debug;
+
+import java.util.Date;
 
 /**
  * Timer Thread Request Class

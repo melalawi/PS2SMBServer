@@ -19,9 +19,9 @@
 
 package org.filesys.server.filesys;
 
-import java.io.FileNotFoundException;
-
 import org.filesys.server.SrvSession;
+
+import java.io.FileNotFoundException;
 
 
 /**

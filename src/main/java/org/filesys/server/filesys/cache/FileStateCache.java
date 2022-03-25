@@ -19,8 +19,6 @@
 
 package org.filesys.server.filesys.cache;
 
-import java.io.IOException;
-
 import org.filesys.debug.Debug;
 import org.filesys.locking.FileLock;
 import org.filesys.locking.LockConflictException;
@@ -36,6 +34,8 @@ import org.filesys.smb.SharingMode;
 import org.filesys.smb.server.SMBSrvPacket;
 import org.filesys.smb.server.SMBSrvSession;
 import org.springframework.extensions.config.ConfigElement;
+
+import java.io.IOException;
 
 /**
  * File State Cache Abstract Class

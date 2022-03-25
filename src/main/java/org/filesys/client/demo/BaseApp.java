@@ -19,19 +19,20 @@
 
 package org.filesys.client.demo;
 
-import java.io.*;
-import java.net.*;
-import java.security.*;
-import java.util.*;
-
+import org.filesys.client.Session;
 import org.filesys.client.SessionFactory;
-import org.filesys.client.*;
 import org.filesys.netbios.NetBIOSSession;
-import org.filesys.smb.Protocol;
 import org.filesys.smb.PCShare;
+import org.filesys.smb.Protocol;
 import org.filesys.util.IPAddress;
 import org.filesys.util.NameValue;
 import org.filesys.util.NameValueList;
+
+import java.io.*;
+import java.net.InetAddress;
+import java.security.Provider;
+import java.security.Security;
+import java.util.Properties;
 
 /**
  * Application Base Class

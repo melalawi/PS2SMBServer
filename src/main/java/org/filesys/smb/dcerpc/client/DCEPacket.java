@@ -24,11 +24,7 @@ import org.filesys.client.TransPacket;
 import org.filesys.debug.Debug;
 import org.filesys.netbios.RFCNetBIOSProtocol;
 import org.filesys.smb.PacketTypeV1;
-import org.filesys.smb.dcerpc.DCEBuffer;
-import org.filesys.smb.dcerpc.DCEBufferException;
-import org.filesys.smb.dcerpc.DCECommand;
-import org.filesys.smb.dcerpc.DCEDataPacker;
-import org.filesys.smb.dcerpc.DCEPipeType;
+import org.filesys.smb.dcerpc.*;
 import org.filesys.util.DataPacker;
 
 /**

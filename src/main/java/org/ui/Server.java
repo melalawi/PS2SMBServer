@@ -2,17 +2,21 @@ package org.ui;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.SortedList;
-
-import javafx.geometry.*;
+import javafx.geometry.HPos;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.geometry.VPos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.paint.Color;
@@ -28,22 +32,18 @@ import javafx.util.Callback;
 import javafx.util.Duration;
 import org.filesys.app.SMBFileServer;
 
-import javafx.scene.media.Media;
-
 import java.io.*;
 import java.net.URL;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 
 
 public class Server extends Application {
     private static final int WIDTH = 1024;
     private static final int HEIGHT = 500;
-    private static final String DEFAULT_CONTROL_INNER_BACKGROUND = "derive(-fx-base,80%)";
-    private static final String HIGHLIGHTED_CONTROL_INNER_BACKGROUND = "derive(palegreen, 50%)";
+    private static final String DEFAULT_CONTROL_INNER_BACKGROUND = "derive(white,80%)";
+    private static final String HIGHLIGHTED_CONTROL_INNER_BACKGROUND = "derive(blue, 50%)";
 
     private static final String QUESTION = "?";
     private static final String CHECK = "✔";
@@ -52,29 +52,54 @@ public class Server extends Application {
     private static File ps2LoadedROMTextFile;
     private static Configuration configuration;
 
-    private List<String> ps2LoadedROMList = new ArrayList<>();
-    private List<String> pcROMList = new ArrayList<>();
-    private String selectedROMName = "";
+    public static List<String> ps2LoadedROMList = new ArrayList<>();
+    private static List<String> pcROMList = new ArrayList<>();
 
-    private ListView<String> pcROMListView = new ListView<>();
+    private static ListView<String> pcROMListView = new ListView<>();
     private ImageView coverImage;
     private Button startPs2ServerButton;
     private Text statusLabelText;
 
     private static GameMetadata gameMetadata;
+    private static ThreadPoolExecutor unzipPool;
 
 
     public static void main(String[] args) throws Exception {
         configuration = new Configuration();
         gameMetadata = new GameMetadata();
+        unzipPool = (ThreadPoolExecutor) Executors.newFixedThreadPool(5);
+
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                if (!Unzipper.ACTIVE_UNZIPS.isEmpty()) {
+                    pcROMListView.refresh();
+                }
+            }
+        }, 2000, 1000);
 
         ps2LoadedROMTextFile = new File(configuration.ps2ROMPath + File.separator + "PS2ROMS.txt");
 
         launch(args);
     }
-    
+    @Override
+    public void stop() {
+        unzipPool.shutdownNow();
+        SMBFileServer.shutdownServer(null);
+    }
+
     public static void startPS2Server() {
         SMBFileServer.main(new String[0]);
+    }
+
+    private Unzipper getUnzipper(final String name) {
+        for (Unzipper unzipper : Unzipper.ACTIVE_UNZIPS) {
+            if (unzipper.getFileName().equals(name)) {
+                return unzipper;
+            }
+        }
+        return null;
     }
 
     private void hookUps() {
@@ -105,7 +130,7 @@ public class Server extends Application {
     }
 
     private void displaySelectedRom(final String game) {
-        selectedROMName = game.substring(0, game.lastIndexOf('(')).trim();
+        String selectedROMName = game.substring(0, game.lastIndexOf('(')).trim();
 
         String closestArtFile = gameMetadata.getClosestArtFile(selectedROMName, configuration.ps2ROMArtDirectory);
 
@@ -134,12 +159,11 @@ public class Server extends Application {
         }
         System.out.println("clicked on " + game);
 
-        try {
-            Unzipper.unSevenZipFile(Paths.get(configuration.pcROMPath, game.trim()), configuration.ps2ROMPath);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        ps2LoadedROMList.add(game);
+
+
+        Unzipper task = new Unzipper(configuration.pcROMPath, game.trim(), configuration.ps2ROMPath);
+
+        unzipPool.execute(task);
 
         updatePS2TextFile();
         resetPCRomListView();
@@ -151,17 +175,11 @@ public class Server extends Application {
         List<String> finalList = new ArrayList<>();
         pcROMListView.getSelectionModel().clearSelection();
 
-        for (String pcROM : pcROMList) {
-            if (ps2LoadedROMList.contains(pcROM)) {
-                finalList.add(" " + pcROM);
-            } else {
-                finalList.add(pcROM);
-            }
-        }
+        finalList.addAll(pcROMList);
 
         for (String ps2ROM : ps2LoadedROMList) {
-            if (!finalList.contains(" " + ps2ROM)) {
-                finalList.add(" " + ps2ROM);
+            if (!finalList.contains(ps2ROM)) {
+                finalList.add(ps2ROM);
             }
         }
 
@@ -385,9 +403,33 @@ public class Server extends Application {
                             setText(null);
                             setStyle("-fx-control-inner-background: " + DEFAULT_CONTROL_INNER_BACKGROUND + ";");
                         } else {
+                            Unzipper unzipper = getUnzipper(item);
                             setText(item);
-                            if (item.startsWith(" ")) {
+
+                            if (ps2LoadedROMList.contains(item)) {
                                 setStyle("-fx-control-inner-background: " + HIGHLIGHTED_CONTROL_INNER_BACKGROUND + ";");
+                            } else if (unzipper != null) {
+                                int currentProgress = unzipper.progress.get();
+
+
+                                setText(currentProgress + "% - " + item);
+
+                                // Ensure progress always visible
+                                if (currentProgress < 10) {
+                                    currentProgress = 10;
+                                }
+
+                                setStyle(
+                                        String.format(
+                                                "-fx-background-color: linear-gradient(to right, %s 0%%, %s %d%%, -fx-background 100%%, -fx-background 100%%);",
+                                                HIGHLIGHTED_CONTROL_INNER_BACKGROUND,
+                                                DEFAULT_CONTROL_INNER_BACKGROUND,
+                                                currentProgress
+                                        )
+                                );
+
+
+
                             } else {
                                 setStyle("-fx-control-inner-background: " + DEFAULT_CONTROL_INNER_BACKGROUND + ";");
                             }

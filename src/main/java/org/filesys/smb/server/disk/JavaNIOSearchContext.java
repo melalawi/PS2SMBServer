@@ -20,16 +20,19 @@
 
 package org.filesys.smb.server.disk;
 
-import java.io.IOException;
-import java.nio.file.*;
-import java.nio.file.attribute.FileTime;
-import java.util.Iterator;
-
 import org.filesys.server.filesys.FileAttribute;
 import org.filesys.server.filesys.FileInfo;
 import org.filesys.server.filesys.FileName;
 import org.filesys.server.filesys.SearchContext;
 import org.filesys.util.WildCard;
+
+import java.io.IOException;
+import java.nio.file.DirectoryStream;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
+import java.nio.file.attribute.FileTime;
+import java.util.Iterator;
 
 /**
  * Java File Search Context Class

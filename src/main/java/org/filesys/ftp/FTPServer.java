@@ -19,14 +19,6 @@
 
 package org.filesys.ftp;
 
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.net.SocketException;
-import java.util.Enumeration;
-
 import org.filesys.debug.Debug;
 import org.filesys.server.ServerListener;
 import org.filesys.server.SrvSession;
@@ -38,6 +30,10 @@ import org.filesys.server.config.ServerConfiguration;
 import org.filesys.server.core.SharedDeviceList;
 import org.filesys.server.filesys.NetworkFileServer;
 import org.filesys.util.UTF8Normalizer;
+
+import java.io.IOException;
+import java.net.*;
+import java.util.Enumeration;
 
 
 /**

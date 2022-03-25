@@ -20,13 +20,13 @@
 
 package org.filesys.server.auth.ntlm;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.filesys.smb.NTTime;
 import org.filesys.util.DataBuffer;
 import org.filesys.util.HexDump;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Type 2 NTLM Message Class

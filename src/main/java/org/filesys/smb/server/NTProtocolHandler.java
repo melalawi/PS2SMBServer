@@ -20,11 +20,6 @@
 
 package org.filesys.smb.server;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.sql.Time;
-import java.util.Set;
-
 import org.filesys.debug.Debug;
 import org.filesys.locking.FileLock;
 import org.filesys.locking.LockConflictException;
@@ -54,6 +49,11 @@ import org.filesys.util.DataBuffer;
 import org.filesys.util.DataPacker;
 import org.filesys.util.MemorySize;
 import org.filesys.util.WildCard;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.Time;
+import java.util.Set;
 
 /**
  * NT SMB Protocol Handler Class

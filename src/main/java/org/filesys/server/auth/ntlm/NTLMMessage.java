@@ -19,10 +19,10 @@
 
 package org.filesys.server.auth.ntlm;
 
-import java.io.UnsupportedEncodingException;
-
 import org.filesys.debug.Debug;
 import org.filesys.util.DataPacker;
+
+import java.io.UnsupportedEncodingException;
 
 /**
  * NTLM Message Types Base Class

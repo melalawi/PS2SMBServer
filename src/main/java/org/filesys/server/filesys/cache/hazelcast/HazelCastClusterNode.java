@@ -19,10 +19,9 @@
 
 package org.filesys.server.filesys.cache.hazelcast;
 
+import com.hazelcast.core.Member;
 import org.filesys.server.filesys.cache.cluster.ClusterInterface;
 import org.filesys.server.filesys.cache.cluster.ClusterNode;
-
-import com.hazelcast.core.Member;
 
 /**
  * HazelCast Cluster Node Class

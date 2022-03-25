@@ -19,7 +19,7 @@
 
 package org.filesys.client.admin;
 
-import java.util.*;
+import java.util.Vector;
 
 /**
  * RAP Readable Interface

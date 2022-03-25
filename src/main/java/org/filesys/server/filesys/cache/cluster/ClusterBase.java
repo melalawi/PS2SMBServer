@@ -20,11 +20,11 @@
 
 package org.filesys.server.filesys.cache.cluster;
 
-import java.io.IOException;
-
 import org.filesys.server.locking.OpLockManager;
 import org.filesys.server.thread.ThreadRequestPool;
 import org.filesys.smb.server.notify.NotifyChangeHandler;
+
+import java.io.IOException;
 
 /**
  * Cluster Interface Base Class

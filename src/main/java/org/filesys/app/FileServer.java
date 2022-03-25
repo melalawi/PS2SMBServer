@@ -20,12 +20,7 @@
 
 package org.filesys.app;
 
-import java.io.File;
-import java.io.PrintStream;
-import java.lang.reflect.Constructor;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-
+import com.sun.jna.Platform;
 import org.filesys.debug.Debug;
 import org.filesys.debug.DebugConfigSection;
 import org.filesys.ftp.FTPConfigSection;
@@ -43,7 +38,11 @@ import org.filesys.smb.util.DriveMappingList;
 import org.filesys.util.ConsoleIO;
 import org.filesys.util.win32.Win32Utils;
 
-import com.sun.jna.Platform;
+import java.io.File;
+import java.io.PrintStream;
+import java.lang.reflect.Constructor;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 /**
  * File Server Application

@@ -19,8 +19,6 @@
 
 package org.filesys.client;
 
-import java.net.*;
-
 import org.filesys.client.admin.AdminSession;
 import org.filesys.debug.Debug;
 import org.filesys.netbios.NetBIOSName;
@@ -31,6 +29,10 @@ import org.filesys.smb.Dialect;
 import org.filesys.smb.PCShare;
 import org.filesys.smb.dcerpc.info.ServerInfo;
 import org.filesys.util.StringList;
+
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
 
 /**
  * The network discovery thread attempts to locate a browse master, determine the local domain name

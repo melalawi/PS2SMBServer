@@ -19,15 +19,15 @@
 
 package org.filesys.client;
 
-import java.io.*;
-import java.security.*;
-
 import org.filesys.debug.Debug;
 import org.filesys.netbios.NetworkSession;
 import org.filesys.netbios.RFCNetBIOSProtocol;
 import org.filesys.smb.*;
-import org.filesys.smb.PacketTypeV1;
 import org.filesys.util.DataPacker;
+
+import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 /**
  *  SMB Session Class

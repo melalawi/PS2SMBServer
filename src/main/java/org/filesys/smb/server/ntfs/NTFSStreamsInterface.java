@@ -19,10 +19,10 @@
 
 package org.filesys.smb.server.ntfs;
 
-import java.io.IOException;
-
 import org.filesys.server.SrvSession;
 import org.filesys.server.filesys.TreeConnection;
+
+import java.io.IOException;
 
 /**
  * NTFS Streams Interface

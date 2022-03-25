@@ -20,51 +20,18 @@
 
 package org.filesys.app;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.net.*;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.Locale;
-import java.util.StringTokenizer;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
 import org.filesys.debug.Debug;
 import org.filesys.debug.DebugConfigSection;
 import org.filesys.netbios.server.LANAMapper;
 import org.filesys.server.auth.ISMBAuthenticator;
 import org.filesys.server.auth.UserAccount;
 import org.filesys.server.auth.UserAccountList;
-import org.filesys.server.auth.acl.ACLParseException;
-import org.filesys.server.auth.acl.AccessControl;
-import org.filesys.server.auth.acl.AccessControlList;
-import org.filesys.server.auth.acl.AccessControlParser;
-import org.filesys.server.auth.acl.InvalidACLTypeException;
-import org.filesys.server.config.CoreServerConfigSection;
-import org.filesys.server.config.GlobalConfigSection;
-import org.filesys.server.config.InvalidConfigurationException;
-import org.filesys.server.config.SecurityConfigSection;
-import org.filesys.server.config.ServerConfiguration;
+import org.filesys.server.auth.acl.*;
+import org.filesys.server.config.*;
 import org.filesys.server.core.DeviceContextException;
 import org.filesys.server.core.ShareType;
 import org.filesys.server.core.SharedDeviceList;
-import org.filesys.server.filesys.DiskDeviceContext;
-import org.filesys.server.filesys.DiskInterface;
-import org.filesys.server.filesys.DiskSharedDevice;
-import org.filesys.server.filesys.FilesystemsConfigSection;
-import org.filesys.server.filesys.SrvDiskInfo;
-import org.filesys.server.filesys.VolumeInfo;
+import org.filesys.server.filesys.*;
 import org.filesys.server.filesys.cache.FileStateCache;
 import org.filesys.server.filesys.cache.StandaloneFileStateCache;
 import org.filesys.server.thread.ThreadRequestPool;
@@ -73,19 +40,23 @@ import org.filesys.smb.DialectSelector;
 import org.filesys.smb.server.SMBConfigSection;
 import org.filesys.smb.server.SMBSrvSession;
 import org.filesys.smb.server.SMBV1VirtualCircuitList;
-import org.filesys.smb.server.VirtualCircuitList;
 import org.filesys.smb.util.DriveMapping;
 import org.filesys.smb.util.DriveMappingList;
 import org.filesys.util.*;
-import org.filesys.util.PlatformType;
 import org.springframework.extensions.config.ConfigElement;
 import org.springframework.extensions.config.element.GenericConfigElement;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import org.w3c.dom.*;
 import org.xml.sax.InputSource;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.*;
+import java.net.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * SMB Only XML File Server Configuration Class
@@ -2463,8 +2434,28 @@ public class SMBOnlyXMLServerConfiguration extends ServerConfiguration {
 			throw new InvalidConfigurationException("Invalid adapter name, " + adapter);
 		}
 
-		if ( ni == null)
+		// Try to get by display name
+		if (ni == null) {
+			try {
+				Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
+
+				while (interfaces.hasMoreElements()) {
+					NetworkInterface networkInterface = interfaces.nextElement();
+
+					if (adapter.equals(networkInterface.getDisplayName())) {
+						ni = networkInterface;
+						break;
+					}
+				}
+			} catch (SocketException ex) {
+				throw new InvalidConfigurationException("Cannot enumerate thru interfaces", ex);
+			}
+		}
+
+		if (ni == null) {
+
 			throw new InvalidConfigurationException("Invalid network adapter name, " + adapter);
+		}
 
 		// Get the IP address for the adapter
 		InetAddress adapAddr = null;

@@ -19,7 +19,8 @@
 
 package org.filesys.smb.dcerpc;
 
-import java.util.*;
+import java.util.Enumeration;
+import java.util.Hashtable;
 
 /**
  * Policy Handle Cache Class

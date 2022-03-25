@@ -19,12 +19,12 @@
 
 package org.filesys.smb.server;
 
-import java.net.InetAddress;
-import java.net.Socket;
-
 import org.filesys.debug.Debug;
 import org.filesys.server.SocketSessionHandler;
 import org.filesys.server.config.ServerConfiguration;
+
+import java.net.InetAddress;
+import java.net.Socket;
 
 /**
  * Native SMB Session Socket Handler Class

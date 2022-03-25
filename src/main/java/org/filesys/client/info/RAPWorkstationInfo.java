@@ -19,11 +19,11 @@
 
 package org.filesys.client.info;
 
-import java.io.Serializable;
-import java.util.*;
-
 import org.filesys.client.admin.RAPReadable;
 import org.filesys.smb.dcerpc.info.WorkstationInfo;
+
+import java.io.Serializable;
+import java.util.Vector;
 
 /**
  * Workstation information class

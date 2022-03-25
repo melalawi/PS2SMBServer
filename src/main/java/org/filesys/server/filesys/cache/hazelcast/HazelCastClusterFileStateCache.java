@@ -19,14 +19,6 @@
 
 package org.filesys.server.filesys.cache.hazelcast;
 
-import java.io.IOException;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Set;
-import java.util.StringTokenizer;
-import java.util.concurrent.*;
-
 import com.hazelcast.core.*;
 import org.filesys.debug.Debug;
 import org.filesys.locking.FileLock;
@@ -41,13 +33,7 @@ import org.filesys.server.filesys.*;
 import org.filesys.server.filesys.cache.FileState;
 import org.filesys.server.filesys.cache.FileStateProxy;
 import org.filesys.server.filesys.cache.LocalFileStateProxy;
-import org.filesys.server.filesys.cache.cluster.ClusterFileLock;
-import org.filesys.server.filesys.cache.cluster.ClusterFileState;
-import org.filesys.server.filesys.cache.cluster.ClusterFileStateCache;
-import org.filesys.server.filesys.cache.cluster.ClusterInterface;
-import org.filesys.server.filesys.cache.cluster.ClusterNode;
-import org.filesys.server.filesys.cache.cluster.ClusterNodeList;
-import org.filesys.server.filesys.cache.cluster.PerNodeState;
+import org.filesys.server.filesys.cache.cluster.*;
 import org.filesys.server.locking.LocalOpLockDetails;
 import org.filesys.server.locking.OpLockDetails;
 import org.filesys.server.locking.OpLockManager;
@@ -58,6 +44,13 @@ import org.filesys.smb.server.SMBSrvPacket;
 import org.filesys.smb.server.SMBSrvSession;
 import org.filesys.smb.server.notify.NotifyChangeHandler;
 import org.springframework.extensions.config.ConfigElement;
+
+import java.io.IOException;
+import java.util.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 /**
  * HazelCast Clustered File State Cache Class

@@ -19,16 +19,14 @@
 
 package org.filesys.smb.server.nio;
 
+import org.filesys.smb.server.PacketHandler;
+import org.filesys.smb.server.Protocol;
+import org.filesys.smb.server.SMBPacketPool;
+
 import java.io.IOException;
 import java.net.StandardSocketOptions;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
-
-import org.filesys.debug.Debug;
-import org.filesys.smb.server.SMBPacketPool;
-import org.filesys.smb.server.PacketHandler;
-import org.filesys.smb.server.Protocol;
-import org.filesys.util.HexDump;
 
 /**
  * Channel Packet Handler Class

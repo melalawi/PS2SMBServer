@@ -19,16 +19,10 @@
 
 package org.filesys.server.auth.kerberos;
 
+import org.filesys.server.auth.asn.*;
+
 import java.io.IOException;
 import java.util.Iterator;
-
-import org.filesys.server.auth.asn.DERApplicationSpecific;
-import org.filesys.server.auth.asn.DERBitString;
-import org.filesys.server.auth.asn.DERBuffer;
-import org.filesys.server.auth.asn.DERInteger;
-import org.filesys.server.auth.asn.DERObject;
-import org.filesys.server.auth.asn.DEROctetString;
-import org.filesys.server.auth.asn.DERSequence;
 
 /**
  * Kerberos AP-REQ Class

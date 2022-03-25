@@ -19,12 +19,12 @@
 
 package org.filesys.server.config;
 
-import java.io.IOException;
-import java.util.*;
-
 import org.filesys.server.NetworkServer;
 import org.filesys.server.NetworkServerList;
 import org.filesys.util.PlatformType;
+
+import java.io.IOException;
+import java.util.*;
 
 
 /**

@@ -19,15 +19,14 @@
 
 package org.filesys.server.filesys.cache.hazelcast;
 
-import java.io.FileNotFoundException;
-
-import org.filesys.server.config.ConfigSection;
-import org.filesys.server.config.ServerConfiguration;
-
 import com.hazelcast.config.Config;
 import com.hazelcast.config.FileSystemXmlConfig;
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
+import org.filesys.server.config.ConfigSection;
+import org.filesys.server.config.ServerConfiguration;
+
+import java.io.FileNotFoundException;
 
 /**
  * Hazelcast Cluster configuration Section Class

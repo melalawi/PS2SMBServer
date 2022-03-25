@@ -20,12 +20,6 @@
 
 package org.filesys.smb.server;
 
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.SocketException;
-import java.net.SocketTimeoutException;
-import java.util.*;
-
 import org.filesys.debug.Debug;
 import org.filesys.netbios.NetBIOSException;
 import org.filesys.netbios.NetBIOSName;
@@ -38,11 +32,20 @@ import org.filesys.server.auth.ClientInfo;
 import org.filesys.server.filesys.*;
 import org.filesys.server.filesys.postprocess.PostRequestProcessor;
 import org.filesys.server.thread.ThreadRequestPool;
-import org.filesys.smb.*;
+import org.filesys.smb.Dialect;
+import org.filesys.smb.DialectSelector;
+import org.filesys.smb.SMBErrorText;
+import org.filesys.smb.SMBStatus;
 import org.filesys.smb.server.notify.NotifyRequest;
 import org.filesys.smb.server.notify.NotifyRequestList;
 import org.filesys.util.HexDump;
 import org.filesys.util.StringList;
+
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
+import java.util.*;
 
 /**
  * <p>

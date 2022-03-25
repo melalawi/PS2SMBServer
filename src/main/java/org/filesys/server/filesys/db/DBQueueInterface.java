@@ -19,11 +19,11 @@
 
 package org.filesys.server.filesys.db;
 
-import java.io.File;
-
 import org.filesys.server.filesys.loader.FileRequest;
 import org.filesys.server.filesys.loader.FileRequestQueue;
 import org.filesys.server.filesys.loader.MultipleFileRequest;
+
+import java.io.File;
 
 /**
  * Database Queue Interface

@@ -19,14 +19,14 @@
 
 package org.filesys.smb.server.notify;
 
+import org.filesys.server.filesys.NetworkFile;
+import org.filesys.server.filesys.NotifyChange;
+import org.filesys.smb.server.SMBSrvSession;
+
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.Set;
-
-import org.filesys.server.filesys.NetworkFile;
-import org.filesys.server.filesys.NotifyChange;
-import org.filesys.smb.server.SMBSrvSession;
 
 
 /**

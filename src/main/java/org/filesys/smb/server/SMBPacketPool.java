@@ -18,14 +18,14 @@
  */
 package org.filesys.smb.server;
 
-import java.util.HashMap;
-import java.util.Iterator;
-
 import org.filesys.debug.Debug;
 import org.filesys.server.core.NoPooledMemoryException;
 import org.filesys.server.memory.ByteBufferPool;
 import org.filesys.server.thread.ThreadRequestPool;
 import org.filesys.server.thread.TimedThreadRequest;
+
+import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * SMB Packet Pool Class

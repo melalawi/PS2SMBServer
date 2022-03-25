@@ -19,9 +19,9 @@
 
 package org.filesys.server.filesys.cache.hazelcast;
 
-import java.io.Serializable;
-
 import org.filesys.server.filesys.cache.cluster.ClusterNode;
+
+import java.io.Serializable;
 
 /**
  * Cluster Message Class

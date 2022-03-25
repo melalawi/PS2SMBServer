@@ -19,14 +19,14 @@
 
 package org.filesys.smb.server.nio;
 
-import java.io.IOException;
-import java.net.InetAddress;
-import java.nio.channels.SocketChannel;
-
 import org.filesys.server.ChannelSessionHandler;
 import org.filesys.server.NetworkServer;
 import org.filesys.smb.server.PacketHandler;
 import org.filesys.smb.server.SMBServer;
+
+import java.io.IOException;
+import java.net.InetAddress;
+import java.nio.channels.SocketChannel;
 
 /**
  * TCP/IP SMB Channel Session Handler Class

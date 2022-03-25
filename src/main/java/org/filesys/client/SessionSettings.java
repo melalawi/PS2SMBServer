@@ -19,13 +19,13 @@
 
 package org.filesys.client;
 
-import java.net.*;
-
 import org.filesys.netbios.NetBIOSSession;
 import org.filesys.netbios.RFCNetBIOSProtocol;
 import org.filesys.smb.DialectSelector;
 import org.filesys.smb.Protocol;
 import org.filesys.smb.TcpipSMB;
+
+import java.net.InetAddress;
 
 /**
  *  The session settings class holds the connection options for a new SMB session.

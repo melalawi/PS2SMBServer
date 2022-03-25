@@ -19,10 +19,10 @@
 
 package org.filesys.server.filesys.db;
 
-import java.io.IOException;
-
 import org.filesys.server.filesys.FileAttribute;
 import org.filesys.server.filesys.cache.FileStateProxy;
+
+import java.io.IOException;
 
 /**
  * Directory Network File Class

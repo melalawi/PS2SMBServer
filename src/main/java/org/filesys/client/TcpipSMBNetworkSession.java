@@ -19,14 +19,19 @@
 
 package org.filesys.client;
 
-import java.io.*;
-import java.net.*;
-
 import org.filesys.debug.Debug;
 import org.filesys.netbios.NetworkSession;
 import org.filesys.netbios.RFCNetBIOSProtocol;
 import org.filesys.smb.TcpipSMB;
 import org.filesys.util.DataPacker;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 
 /**
  * Native TCP/IP SMB Network Session Class

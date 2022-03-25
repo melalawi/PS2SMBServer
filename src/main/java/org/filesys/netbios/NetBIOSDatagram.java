@@ -19,13 +19,13 @@
 
 package org.filesys.netbios;
 
+import org.filesys.util.DataPacker;
+
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-
-import org.filesys.util.DataPacker;
 
 /**
  * NetBIOS datagram class

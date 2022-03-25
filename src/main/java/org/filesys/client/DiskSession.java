@@ -19,9 +19,6 @@
 
 package org.filesys.client;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
 import org.filesys.client.info.DiskInfo;
 import org.filesys.client.info.FileInfo;
 import org.filesys.client.info.VolumeInfo;
@@ -29,6 +26,9 @@ import org.filesys.server.filesys.FileAttribute;
 import org.filesys.smb.PCShare;
 import org.filesys.smb.SMBDeviceType;
 import org.filesys.smb.SMBException;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /**
  *  <p>The DiskSession class provides disk, directory and file related methods on

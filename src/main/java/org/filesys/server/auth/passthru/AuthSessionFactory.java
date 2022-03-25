@@ -19,21 +19,16 @@
 
 package org.filesys.server.auth.passthru;
 
+import org.filesys.debug.Debug;
+import org.filesys.netbios.*;
+import org.filesys.server.auth.PasswordEncryptor;
+import org.filesys.smb.*;
+import org.filesys.util.IPAddress;
+import org.filesys.util.StringList;
+
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-
-import org.filesys.debug.Debug;
-import org.filesys.netbios.NetBIOSName;
-import org.filesys.netbios.NetBIOSNameList;
-import org.filesys.netbios.NetBIOSSession;
-import org.filesys.netbios.NetworkSession;
-import org.filesys.netbios.RFCNetBIOSProtocol;
-import org.filesys.server.auth.PasswordEncryptor;
-import org.filesys.smb.*;
-import org.filesys.smb.PacketTypeV1;
-import org.filesys.util.IPAddress;
-import org.filesys.util.StringList;
 
 /**
  * <p>The AuthSessionFactory static class is used to create sessions to remote shared

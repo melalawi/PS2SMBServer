@@ -19,13 +19,13 @@
 
 package org.filesys.smb.server.nio;
 
-import java.nio.channels.SelectionKey;
-
 import org.filesys.debug.Debug;
 import org.filesys.server.thread.ThreadRequest;
 import org.filesys.smb.server.PacketHandler;
 import org.filesys.smb.server.SMBSrvPacket;
 import org.filesys.smb.server.SMBSrvSession;
+
+import java.nio.channels.SelectionKey;
 
 /**
  * NIO SMB Thread Request Class

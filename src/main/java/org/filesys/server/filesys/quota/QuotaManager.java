@@ -19,13 +19,13 @@
 
 package org.filesys.server.filesys.quota;
 
-import java.io.IOException;
-
 import org.filesys.server.SrvSession;
 import org.filesys.server.filesys.DiskDeviceContext;
 import org.filesys.server.filesys.DiskInterface;
 import org.filesys.server.filesys.NetworkFile;
 import org.filesys.server.filesys.TreeConnection;
+
+import java.io.IOException;
 
 
 /**

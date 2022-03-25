@@ -19,7 +19,7 @@
 
 package org.filesys.client;
 
-import java.security.*;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * Password Encryptor Abstract Class

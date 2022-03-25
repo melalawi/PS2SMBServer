@@ -20,9 +20,6 @@
 
 package org.filesys.server.filesys.cache.cluster;
 
-import java.io.Serializable;
-import java.util.HashMap;
-
 import org.filesys.server.filesys.ExistingOpLockException;
 import org.filesys.server.filesys.FileStatus;
 import org.filesys.server.filesys.cache.FileState;
@@ -30,6 +27,9 @@ import org.filesys.server.filesys.cache.hazelcast.RemoteOpLockDetails;
 import org.filesys.server.filesys.pseudo.PseudoFileList;
 import org.filesys.server.locking.LocalOpLockDetails;
 import org.filesys.server.locking.OpLockDetails;
+
+import java.io.Serializable;
+import java.util.HashMap;
 
 /**
  * Cluster File State Class

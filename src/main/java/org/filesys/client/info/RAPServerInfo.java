@@ -19,10 +19,10 @@
 
 package org.filesys.client.info;
 
-import java.util.*;
-
 import org.filesys.client.admin.RAPReadable;
 import org.filesys.smb.dcerpc.info.ServerInfo;
+
+import java.util.Vector;
 
 /**
  * SMB server info class

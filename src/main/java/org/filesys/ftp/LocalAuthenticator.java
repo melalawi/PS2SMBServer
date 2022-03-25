@@ -19,15 +19,15 @@
 
 package org.filesys.ftp;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-
 import org.filesys.server.auth.ClientInfo;
 import org.filesys.server.auth.UserAccount;
 import org.filesys.server.config.InvalidConfigurationException;
 import org.filesys.server.config.SecurityConfigSection;
 import org.filesys.server.config.ServerConfiguration;
 import org.springframework.extensions.config.ConfigElement;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * <p>Local Authenticator Class.

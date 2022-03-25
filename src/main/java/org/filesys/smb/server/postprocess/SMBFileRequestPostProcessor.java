@@ -17,7 +17,6 @@
 package org.filesys.smb.server.postprocess;
 
 import org.filesys.server.SrvSession;
-import org.filesys.server.filesys.DiskInterface;
 import org.filesys.server.filesys.NetworkFile;
 import org.filesys.server.filesys.TreeConnection;
 import org.filesys.server.filesys.postprocess.FileRequestPostProcessor;

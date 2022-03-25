@@ -19,14 +19,14 @@
 
 package org.filesys.server.filesys.db;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-
 import org.filesys.debug.Debug;
 import org.filesys.server.filesys.FileInfo;
 import org.filesys.server.filesys.SearchContext;
 import org.filesys.util.WildCard;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * Database Disk Search Context Class

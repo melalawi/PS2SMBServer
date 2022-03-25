@@ -19,13 +19,13 @@
 
 package org.filesys.server.filesys.db;
 
-import java.io.IOException;
-
 import org.filesys.server.filesys.NetworkFile;
 import org.filesys.server.filesys.cache.FileState;
 import org.filesys.server.filesys.cache.FileStateProxy;
 import org.filesys.server.filesys.cache.NetworkFileStateInterface;
 import org.filesys.server.filesys.loader.FileLoader;
+
+import java.io.IOException;
 
 /**
  * Database Network File Class

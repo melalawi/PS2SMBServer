@@ -19,11 +19,11 @@
 
 package org.filesys.smb.dcerpc.info;
 
-import java.util.*;
-
 import org.filesys.smb.dcerpc.DCEBuffer;
 import org.filesys.smb.dcerpc.DCEBufferException;
 import org.filesys.smb.dcerpc.DCEReadable;
+
+import java.util.BitSet;
 
 /**
  * User Information Class

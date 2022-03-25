@@ -20,7 +20,6 @@
 
 package org.filesys.smb.server.disk;
 
-import org.filesys.debug.Debug;
 import org.filesys.server.filesys.DiskFullException;
 import org.filesys.server.filesys.NetworkFile;
 import org.filesys.smb.SeekType;

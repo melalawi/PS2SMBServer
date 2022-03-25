@@ -19,10 +19,10 @@
 
 package org.filesys.server.filesys.pseudo;
 
-import java.io.File;
-
 import org.filesys.server.filesys.FileInfo;
 import org.filesys.server.filesys.NetworkFile;
+
+import java.io.File;
 
 
 /**

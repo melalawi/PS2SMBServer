@@ -19,8 +19,6 @@
 
 package org.filesys.client.admin;
 
-import java.io.*;
-
 import org.filesys.client.IPCSession;
 import org.filesys.smb.SMBException;
 import org.filesys.smb.dcerpc.DCEBuffer;
@@ -28,6 +26,8 @@ import org.filesys.smb.dcerpc.DCEBufferException;
 import org.filesys.smb.dcerpc.client.DCEPacket;
 import org.filesys.smb.dcerpc.client.Eventlog;
 import org.filesys.smb.dcerpc.info.EventlogRecordList;
+
+import java.io.IOException;
 
 /**
  * Eventlog Pipe File Class

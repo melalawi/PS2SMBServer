@@ -19,19 +19,12 @@
 
 package org.filesys.client;
 
-import java.io.*;
-
 import org.filesys.client.info.FileInfo;
 import org.filesys.netbios.RFCNetBIOSProtocol;
 import org.filesys.server.filesys.FileAttribute;
-import org.filesys.smb.Dialect;
-import org.filesys.smb.LockingAndX;
-import org.filesys.smb.OpLockType;
-import org.filesys.smb.PacketTypeV1;
-import org.filesys.smb.SMBDate;
-import org.filesys.smb.SMBException;
-import org.filesys.smb.SMBStatus;
-import org.filesys.smb.SeekType;
+import org.filesys.smb.*;
+
+import java.io.IOException;
 
 /**
  *  SMB file class

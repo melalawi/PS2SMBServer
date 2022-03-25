@@ -19,10 +19,10 @@
 
 package org.filesys.smb.server;
 
+import org.filesys.debug.Debug;
+
 import java.io.IOException;
 import java.net.InetAddress;
-
-import org.filesys.debug.Debug;
 
 /**
  * Protocol Packet Handler Class

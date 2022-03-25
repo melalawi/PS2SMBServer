@@ -19,10 +19,10 @@
 
 package org.filesys.server.filesys.cache;
 
+import org.filesys.debug.Debug;
+
 import java.util.Enumeration;
 import java.util.Hashtable;
-
-import org.filesys.debug.Debug;
 
 /**
  * File State Reaper Class

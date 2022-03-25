@@ -20,10 +20,10 @@
 
 package org.filesys.server.auth.spnego;
 
-import java.io.IOException;
-
 import org.filesys.server.auth.SecurityBlob;
 import org.filesys.server.auth.asn.DER;
+
+import java.io.IOException;
 
 
 /**

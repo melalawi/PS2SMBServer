@@ -20,10 +20,6 @@
 
 package org.filesys.server.filesys.cache;
 
-import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Iterator;
-
 import org.filesys.debug.Debug;
 import org.filesys.locking.FileLock;
 import org.filesys.locking.FileLockList;
@@ -37,6 +33,10 @@ import org.filesys.server.filesys.pseudo.PseudoFile;
 import org.filesys.server.filesys.pseudo.PseudoFileList;
 import org.filesys.server.locking.OpLockDetails;
 import org.filesys.smb.SharingMode;
+
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * File State Class

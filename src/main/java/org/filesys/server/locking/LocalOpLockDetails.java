@@ -20,14 +20,14 @@
 
 package org.filesys.server.locking;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import org.filesys.debug.Debug;
 import org.filesys.server.filesys.DeferFailedException;
 import org.filesys.smb.OpLockType;
 import org.filesys.smb.SMBStatus;
 import org.filesys.smb.server.*;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Local OpLock Details Class

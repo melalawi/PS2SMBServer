@@ -19,9 +19,6 @@
 
 package org.filesys.client.admin;
 
-import java.io.*;
-import java.util.*;
-
 import org.filesys.client.IPCSession;
 import org.filesys.server.filesys.AccessMode;
 import org.filesys.smb.SMBException;
@@ -32,6 +29,10 @@ import org.filesys.smb.dcerpc.client.Winreg;
 import org.filesys.smb.dcerpc.info.RegistryKey;
 import org.filesys.smb.dcerpc.info.RegistryKeyInfo;
 import org.filesys.smb.dcerpc.info.RegistryValue;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Windows Registry Pipe File Class

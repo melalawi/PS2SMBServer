@@ -19,14 +19,14 @@
 
 package org.filesys.server.locking;
 
-import java.io.IOException;
-
 import org.filesys.server.filesys.DeferFailedException;
 import org.filesys.server.filesys.ExistingOpLockException;
 import org.filesys.server.filesys.NetworkFile;
 import org.filesys.smb.OpLockType;
 import org.filesys.smb.server.SMBSrvPacket;
 import org.filesys.smb.server.SMBSrvSession;
+
+import java.io.IOException;
 
 /**
  * OpLock Manager Interface

@@ -19,19 +19,20 @@
 
 package org.filesys.client.demo;
 
-import java.io.*;
-import java.text.*;
-
+import org.filesys.client.DiskSession;
+import org.filesys.client.SearchContext;
 import org.filesys.client.SessionFactory;
 import org.filesys.client.info.FileInfo;
 import org.filesys.server.filesys.FileAttribute;
-import org.filesys.client.*;
 import org.filesys.smb.InvalidUNCPathException;
 import org.filesys.smb.PCShare;
 import org.filesys.smb.SMBDate;
 import org.filesys.util.MemorySize;
 import org.filesys.util.NameValue;
 import org.filesys.util.NameValueList;
+
+import java.io.PrintStream;
+import java.text.SimpleDateFormat;
 
 /**
  * srvDir Application

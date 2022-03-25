@@ -19,9 +19,9 @@
 
 package org.filesys.server.filesys;
 
-import java.util.Date;
-
 import org.filesys.smb.SMBDate;
+
+import java.util.Date;
 
 /**
  * File information class.

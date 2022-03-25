@@ -19,15 +19,15 @@
 
 package org.filesys.server.filesys.pseudo;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.RandomAccessFile;
-
 import org.filesys.server.filesys.NetworkFile;
 import org.filesys.server.filesys.cache.FileState;
 import org.filesys.server.filesys.cache.LocalFileState;
 import org.filesys.server.filesys.cache.NetworkFileStateInterface;
 import org.filesys.smb.SeekType;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 
 /**
  * Pseudo File Network File Class

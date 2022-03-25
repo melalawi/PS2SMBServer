@@ -19,10 +19,10 @@
 
 package org.filesys.server.auth.acl;
 
-import java.util.StringTokenizer;
-
 import org.filesys.server.SrvSession;
 import org.filesys.server.core.SharedDevice;
+
+import java.util.StringTokenizer;
 
 
 /**

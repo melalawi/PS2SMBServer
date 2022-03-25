@@ -19,14 +19,14 @@
 
 package org.filesys.client;
 
-import java.io.IOException;
-
 import org.filesys.client.info.FileInfo;
 import org.filesys.smb.DataType;
 import org.filesys.smb.PacketTypeV1;
 import org.filesys.smb.SMBDate;
 import org.filesys.smb.SMBException;
 import org.filesys.util.DataPacker;
+
+import java.io.IOException;
 
 /**
  * SMB core file class

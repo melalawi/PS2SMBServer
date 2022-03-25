@@ -20,9 +20,6 @@
 
 package org.filesys.smb.server;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
 import org.filesys.debug.Debug;
 import org.filesys.netbios.RFCNetBIOSProtocol;
 import org.filesys.server.auth.ClientInfo;
@@ -34,12 +31,14 @@ import org.filesys.server.core.ShareType;
 import org.filesys.server.core.SharedDevice;
 import org.filesys.server.filesys.*;
 import org.filesys.smb.*;
-import org.filesys.smb.PacketTypeV1;
 import org.filesys.smb.server.ntfs.NTFSStreamsInterface;
 import org.filesys.smb.server.ntfs.StreamInfoList;
 import org.filesys.util.DataBuffer;
 import org.filesys.util.DataPacker;
 import org.filesys.util.WildCard;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /**
  * LanMan SMB Protocol Handler Class.

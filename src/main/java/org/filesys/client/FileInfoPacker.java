@@ -19,8 +19,8 @@
 
 package org.filesys.client;
 
-import org.filesys.client.info.FileInfo;
 import org.filesys.client.info.ExtendedFileInfo;
+import org.filesys.client.info.FileInfo;
 import org.filesys.client.info.StreamInfo;
 import org.filesys.smb.NTTime;
 import org.filesys.smb.SMBDate;

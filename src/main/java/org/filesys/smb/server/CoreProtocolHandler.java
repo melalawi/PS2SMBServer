@@ -20,8 +20,6 @@
 
 package org.filesys.smb.server;
 
-import java.io.IOException;
-
 import org.filesys.debug.Debug;
 import org.filesys.netbios.RFCNetBIOSProtocol;
 import org.filesys.server.auth.ISMBAuthenticator;
@@ -31,9 +29,10 @@ import org.filesys.server.core.ShareType;
 import org.filesys.server.core.SharedDevice;
 import org.filesys.server.filesys.*;
 import org.filesys.smb.*;
-import org.filesys.smb.PacketTypeV1;
 import org.filesys.util.DataPacker;
 import org.filesys.util.WildCard;
+
+import java.io.IOException;
 
 /**
  * Core SMB protocol handler class.

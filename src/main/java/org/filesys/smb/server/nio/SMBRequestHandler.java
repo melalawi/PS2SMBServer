@@ -19,18 +19,6 @@
 
 package org.filesys.smb.server.nio;
 
-import java.io.IOException;
-import java.nio.channels.CancelledKeyException;
-import java.nio.channels.ClosedChannelException;
-import java.nio.channels.SelectionKey;
-import java.nio.channels.Selector;
-import java.nio.channels.SocketChannel;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
-
 import org.filesys.debug.Debug;
 import org.filesys.server.SrvSessionQueue;
 import org.filesys.server.core.NoPooledMemoryException;
@@ -38,6 +26,14 @@ import org.filesys.server.thread.ThreadRequest;
 import org.filesys.server.thread.ThreadRequestPool;
 import org.filesys.smb.server.SMBSrvSession;
 import org.filesys.smb.server.SessionState;
+
+import java.io.IOException;
+import java.nio.channels.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * SMB Request Handler Class

@@ -19,12 +19,12 @@
 
 package org.filesys.smb.dcerpc.server;
 
-import java.io.IOException;
-
 import org.filesys.smb.dcerpc.DCEBuffer;
 import org.filesys.smb.server.SMBSrvException;
 import org.filesys.smb.server.SMBSrvPacket;
 import org.filesys.smb.server.SMBSrvSession;
+
+import java.io.IOException;
 
 /**
  * DCE Request Handler Interface

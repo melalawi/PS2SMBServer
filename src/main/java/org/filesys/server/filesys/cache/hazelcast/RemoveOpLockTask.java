@@ -19,10 +19,9 @@
 
 package org.filesys.server.filesys.cache.hazelcast;
 
+import com.hazelcast.core.IMap;
 import org.filesys.debug.Debug;
 import org.filesys.server.filesys.cache.cluster.ClusterFileState;
-
-import com.hazelcast.core.IMap;
 
 /**
  * Rename File State Task Class

@@ -19,8 +19,6 @@
 
 package org.filesys.client;
 
-import java.io.*;
-
 import org.filesys.debug.Debug;
 import org.filesys.netbios.RFCNetBIOSProtocol;
 import org.filesys.smb.PacketTypeV1;
@@ -28,6 +26,8 @@ import org.filesys.smb.SMBException;
 import org.filesys.smb.TransactBuffer;
 import org.filesys.util.DataBuffer;
 import org.filesys.util.DataPacker;
+
+import java.io.IOException;
 
 /**
  * SMB transact packet class

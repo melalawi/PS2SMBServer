@@ -20,6 +20,7 @@
             <broadcast>192.168.1.255</broadcast>
             <smbdialects>SMB1</smbdialects>
             <comment>Java File Server</comment>
+            <!-- <bindto adapter="TP-Link Wireless USB Adapter" /> -->
 
             <Win32Announce interval="5"/>
 
@@ -51,12 +52,13 @@
         <rom>
             <pcpath>D:\ROMS\PS2</pcpath>
             <ps2smbpath>E:\Documents\Repositories\PS2SMBServer\PS2\DVD</ps2smbpath>
-            <art>E:\Documents\Repositories\PS2SMBServer\Art</art>
+            <art>D:\ROMS\PS2Art</art>
         </rom>
     </ui>
 
     <security>
         <authenticator>
+            <enabled>false</enabled>
             <class>org.filesys.server.auth.LocalAuthenticator</class>
             <mode>SHARE</mode>
             <allowGuest/>

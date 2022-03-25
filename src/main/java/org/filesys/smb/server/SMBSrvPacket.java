@@ -20,10 +20,10 @@
 
 package org.filesys.smb.server;
 
-import java.io.DataOutputStream;
-
 import org.filesys.netbios.RFCNetBIOSProtocol;
 import org.filesys.util.DataPacker;
+
+import java.io.DataOutputStream;
 
 /**
  * Server SMB Packet Class

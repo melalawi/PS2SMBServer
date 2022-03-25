@@ -19,15 +19,14 @@
 
 package org.filesys.server.filesys.cache.hazelcast;
 
-import java.io.Serializable;
-import java.util.concurrent.Callable;
-
-import org.filesys.debug.Debug;
-import org.filesys.server.filesys.cache.cluster.ClusterFileState;
-
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.HazelcastInstanceAware;
 import com.hazelcast.core.IMap;
+import org.filesys.debug.Debug;
+import org.filesys.server.filesys.cache.cluster.ClusterFileState;
+
+import java.io.Serializable;
+import java.util.concurrent.Callable;
 
 /**
  * Remote Cache Task Class

@@ -19,12 +19,12 @@
 
 package org.filesys.smb.dcerpc.info;
 
-import java.util.*;
-
 import org.filesys.smb.dcerpc.DCEBuffer;
 import org.filesys.smb.dcerpc.DCEBufferException;
 import org.filesys.smb.dcerpc.DCEReadable;
 import org.filesys.util.StringList;
+
+import java.util.Date;
 
 /**
  * Eventlog Record Class

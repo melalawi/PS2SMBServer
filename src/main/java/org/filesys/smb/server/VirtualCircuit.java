@@ -20,16 +20,16 @@
 
 package org.filesys.smb.server;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-
 import org.filesys.debug.Debug;
 import org.filesys.server.SrvSession;
 import org.filesys.server.auth.ClientInfo;
 import org.filesys.server.core.DeviceInterface;
 import org.filesys.server.core.SharedDevice;
 import org.filesys.server.filesys.*;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Virtual Circuit Class

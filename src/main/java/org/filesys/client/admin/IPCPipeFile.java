@@ -19,8 +19,6 @@
 
 package org.filesys.client.admin;
 
-import java.io.*;
-
 import org.filesys.client.IPCSession;
 import org.filesys.client.SMBPacket;
 import org.filesys.netbios.RFCNetBIOSProtocol;
@@ -32,6 +30,8 @@ import org.filesys.smb.dcerpc.DCEBufferException;
 import org.filesys.smb.dcerpc.DCECommand;
 import org.filesys.smb.dcerpc.client.DCEPacket;
 import org.filesys.util.DataPacker;
+
+import java.io.IOException;
 
 /**
  * IPC Pipe File Class

@@ -19,9 +19,6 @@
 
 package org.filesys.server.auth.acl;
 
-import java.util.Enumeration;
-import java.util.List;
-
 import org.filesys.debug.Debug;
 import org.filesys.server.SrvSession;
 import org.filesys.server.config.InvalidConfigurationException;
@@ -29,6 +26,9 @@ import org.filesys.server.config.ServerConfiguration;
 import org.filesys.server.core.SharedDevice;
 import org.filesys.server.core.SharedDeviceList;
 import org.springframework.extensions.config.ConfigElement;
+
+import java.util.Enumeration;
+import java.util.List;
 
 /**
  * Default Access Control Manager Class

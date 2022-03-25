@@ -19,8 +19,6 @@
 
 package org.filesys.server.filesys;
 
-import java.util.Enumeration;
-
 import org.filesys.debug.Debug;
 import org.filesys.server.SrvSession;
 import org.filesys.server.auth.InvalidUserException;
@@ -33,6 +31,8 @@ import org.filesys.server.core.ShareType;
 import org.filesys.server.core.SharedDevice;
 import org.filesys.server.core.SharedDeviceList;
 import org.springframework.extensions.config.ConfigElement;
+
+import java.util.Enumeration;
 
 /**
  * Default Share Mapper Class

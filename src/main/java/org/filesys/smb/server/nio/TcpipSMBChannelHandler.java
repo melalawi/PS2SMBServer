@@ -19,15 +19,15 @@
 
 package org.filesys.smb.server.nio;
 
-import java.io.IOException;
-import java.nio.channels.SocketChannel;
-
 import org.filesys.netbios.RFCNetBIOSProtocol;
 import org.filesys.smb.TcpipSMB;
-import org.filesys.smb.server.SMBPacketPool;
 import org.filesys.smb.server.Protocol;
+import org.filesys.smb.server.SMBPacketPool;
 import org.filesys.smb.server.SMBSrvPacket;
 import org.filesys.util.DataPacker;
+
+import java.io.IOException;
+import java.nio.channels.SocketChannel;
 
 /**
  * Tcpip SMB Packet Handler Class

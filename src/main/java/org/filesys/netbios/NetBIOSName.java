@@ -19,13 +19,13 @@
 
 package org.filesys.netbios;
 
+import org.filesys.debug.Debug;
+import org.filesys.util.IPAddress;
+
 import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
-
-import org.filesys.debug.Debug;
-import org.filesys.util.IPAddress;
 
 /**
  * NetBIOS Name Class

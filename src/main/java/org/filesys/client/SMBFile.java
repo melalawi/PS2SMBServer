@@ -19,12 +19,12 @@
 
 package org.filesys.client;
 
-import java.io.*;
-
 import org.filesys.client.info.FileInfo;
 import org.filesys.smb.SMBDate;
 import org.filesys.smb.SMBException;
 import org.filesys.smb.SMBStatus;
+
+import java.io.IOException;
 
 /**
  *  SMB file class.

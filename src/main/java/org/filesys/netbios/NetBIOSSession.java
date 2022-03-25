@@ -20,27 +20,19 @@
 
 package org.filesys.netbios;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.InterfaceAddress;
-import java.net.NetworkInterface;
-import java.net.Socket;
-import java.net.SocketException;
-import java.net.UnknownHostException;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.List;
-
 import org.filesys.debug.Debug;
 import org.filesys.util.DataPacker;
 import org.filesys.util.HexDump;
 import org.filesys.util.IPAddress;
 import org.filesys.util.StringList;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.*;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.List;
 
 /**
  * NetBIOS session class.

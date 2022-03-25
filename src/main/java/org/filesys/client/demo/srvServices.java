@@ -19,8 +19,6 @@
 
 package org.filesys.client.demo;
 
-import java.io.*;
-
 import org.filesys.client.SessionFactory;
 import org.filesys.client.admin.AdminSession;
 import org.filesys.client.admin.SvcctlPipeFile;
@@ -30,6 +28,8 @@ import org.filesys.smb.dcerpc.info.ServiceStatusInfo;
 import org.filesys.smb.dcerpc.info.ServiceStatusList;
 import org.filesys.util.NameValue;
 import org.filesys.util.NameValueList;
+
+import java.io.PrintStream;
 
 /**
  * srvServices Application

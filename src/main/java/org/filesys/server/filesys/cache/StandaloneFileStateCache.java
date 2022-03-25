@@ -19,11 +19,6 @@
 
 package org.filesys.server.filesys.cache;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-
 import org.filesys.debug.Debug;
 import org.filesys.server.config.InvalidConfigurationException;
 import org.filesys.server.config.ServerConfiguration;
@@ -31,6 +26,11 @@ import org.filesys.server.filesys.FileName;
 import org.filesys.server.filesys.FileStatus;
 import org.filesys.server.locking.OpLockDetails;
 import org.springframework.extensions.config.ConfigElement;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * File State Cache Class

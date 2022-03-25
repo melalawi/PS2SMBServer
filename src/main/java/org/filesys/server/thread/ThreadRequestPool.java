@@ -19,10 +19,10 @@
 
 package org.filesys.server.thread;
 
+import org.filesys.debug.Debug;
+
 import java.util.List;
 import java.util.concurrent.PriorityBlockingQueue;
-
-import org.filesys.debug.Debug;
 
 /**
  * Thread Request Pool Class

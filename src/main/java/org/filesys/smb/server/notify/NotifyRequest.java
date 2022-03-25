@@ -20,14 +20,14 @@
 
 package org.filesys.smb.server.notify;
 
-import java.util.Date;
-import java.util.Set;
-
 import org.filesys.server.filesys.DiskDeviceContext;
 import org.filesys.server.filesys.FileName;
 import org.filesys.server.filesys.NetworkFile;
 import org.filesys.server.filesys.NotifyChange;
 import org.filesys.smb.server.SMBSrvSession;
+
+import java.util.Date;
+import java.util.Set;
 
 
 /**

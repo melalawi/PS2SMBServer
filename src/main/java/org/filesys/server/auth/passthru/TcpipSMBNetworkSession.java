@@ -19,6 +19,11 @@
 
 package org.filesys.server.auth.passthru;
 
+import org.filesys.netbios.NetworkSession;
+import org.filesys.netbios.RFCNetBIOSProtocol;
+import org.filesys.smb.TcpipSMB;
+import org.filesys.util.DataPacker;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -27,11 +32,6 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketException;
 import java.net.UnknownHostException;
-
-import org.filesys.netbios.NetworkSession;
-import org.filesys.netbios.RFCNetBIOSProtocol;
-import org.filesys.smb.TcpipSMB;
-import org.filesys.util.DataPacker;
 
 /**
  * Native TCP/IP SMB Network Session Class

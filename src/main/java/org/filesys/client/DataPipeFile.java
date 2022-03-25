@@ -19,13 +19,12 @@
 
 package org.filesys.client;
 
-import java.io.*;
-import java.net.SocketTimeoutException;
-
 import org.filesys.client.info.FileInfo;
 import org.filesys.netbios.RFCNetBIOSProtocol;
 import org.filesys.smb.*;
-import org.filesys.smb.PacketTypeV1;
+
+import java.io.IOException;
+import java.net.SocketTimeoutException;
 
 /**
  * SMB Data Pipe File Class

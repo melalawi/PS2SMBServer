@@ -19,17 +19,9 @@
 
 package org.filesys.app;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.util.StringTokenizer;
-
-import org.filesys.ftp.FTPSiteInterface;
 import org.filesys.ftp.FTPConfigSection;
 import org.filesys.ftp.FTPPath;
+import org.filesys.ftp.FTPSiteInterface;
 import org.filesys.ftp.InvalidPathException;
 import org.filesys.oncrpc.nfs.NFSConfigSection;
 import org.filesys.server.config.InvalidConfigurationException;
@@ -39,6 +31,14 @@ import org.springframework.extensions.config.element.ConfigElementAdapter;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.util.StringTokenizer;
 
 /**
  * XML File Server Configuration Class

@@ -19,8 +19,6 @@
 
 package org.filesys.server.filesys;
 
-import java.util.Enumeration;
-
 import org.filesys.server.config.ConfigSection;
 import org.filesys.server.config.ServerConfiguration;
 import org.filesys.server.core.DeviceContext;
@@ -28,6 +26,8 @@ import org.filesys.server.core.SharedDevice;
 import org.filesys.server.core.SharedDeviceList;
 import org.filesys.server.filesys.cache.FileStateCache;
 import org.filesys.server.filesys.cache.FileStateReaper;
+
+import java.util.Enumeration;
 
 /**
  * Filesystems Configuration Section Class

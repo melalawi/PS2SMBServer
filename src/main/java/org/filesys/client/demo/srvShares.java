@@ -19,8 +19,6 @@
 
 package org.filesys.client.demo;
 
-import java.io.*;
-
 import org.filesys.client.SessionFactory;
 import org.filesys.client.admin.AdminSession;
 import org.filesys.smb.PCShare;
@@ -28,6 +26,8 @@ import org.filesys.smb.dcerpc.info.ShareInfo;
 import org.filesys.smb.dcerpc.info.ShareInfoList;
 import org.filesys.util.NameValue;
 import org.filesys.util.NameValueList;
+
+import java.io.PrintStream;
 
 /**
  * srvShares Application

@@ -19,9 +19,6 @@
 
 package org.filesys.oncrpc.nfs;
 
-import java.net.InetAddress;
-import java.util.Enumeration;
-
 import org.filesys.debug.Debug;
 import org.filesys.oncrpc.Rpc;
 import org.filesys.server.NetworkServer;
@@ -31,6 +28,9 @@ import org.filesys.server.core.DeviceInterface;
 import org.filesys.server.filesys.SearchContext;
 import org.filesys.server.filesys.TreeConnection;
 import org.filesys.server.filesys.TreeConnectionHash;
+
+import java.net.InetAddress;
+import java.util.Enumeration;
 
 /**
  * NFS Server Session Class

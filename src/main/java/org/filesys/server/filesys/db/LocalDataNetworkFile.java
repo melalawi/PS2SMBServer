@@ -19,12 +19,12 @@
 
 package org.filesys.server.filesys.db;
 
+import org.filesys.server.filesys.cache.FileState;
+import org.filesys.smb.SeekType;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
-
-import org.filesys.server.filesys.cache.FileState;
-import org.filesys.smb.SeekType;
 
 /**
  * Local Data Network File Class

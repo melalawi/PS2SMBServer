@@ -19,9 +19,6 @@
 
 package org.filesys.client.demo;
 
-import java.io.*;
-import java.text.*;
-
 import org.filesys.client.SessionFactory;
 import org.filesys.client.admin.AdminSession;
 import org.filesys.client.admin.EventlogHandle;
@@ -32,6 +29,9 @@ import org.filesys.smb.dcerpc.info.EventlogRecord;
 import org.filesys.smb.dcerpc.info.EventlogRecordList;
 import org.filesys.util.NameValue;
 import org.filesys.util.NameValueList;
+
+import java.io.PrintStream;
+import java.text.SimpleDateFormat;
 
 /**
  * srvEventlog Application

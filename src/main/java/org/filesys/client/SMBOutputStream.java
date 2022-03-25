@@ -19,9 +19,9 @@
 
 package org.filesys.client;
 
-import java.io.*;
-
 import org.filesys.smb.SMBException;
+
+import java.io.IOException;
 
 /**
  * SMB output stream class.

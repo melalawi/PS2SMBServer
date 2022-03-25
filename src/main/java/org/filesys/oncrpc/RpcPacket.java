@@ -19,11 +19,11 @@
 
 package org.filesys.oncrpc;
 
-import java.io.UnsupportedEncodingException;
-import java.net.InetAddress;
-
 import org.filesys.util.DataPacker;
 import org.filesys.util.UTF8Normalizer;
+
+import java.io.UnsupportedEncodingException;
+import java.net.InetAddress;
 
 /**
  * ONC/RPC Request/Response Packet Class

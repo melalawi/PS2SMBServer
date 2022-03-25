@@ -19,20 +19,16 @@
 
 package org.filesys.client.demo;
 
-import java.io.*;
-import java.text.*;
-
+import org.filesys.client.CIFSDiskSession;
 import org.filesys.client.DiskSession;
+import org.filesys.client.SMBFile;
 import org.filesys.client.SessionFactory;
+import org.filesys.client.admin.AdminSession;
 import org.filesys.client.admin.SamrPipeFile;
-import org.filesys.client.info.DiskInfo;
-import org.filesys.client.info.FileInfo;
+import org.filesys.client.info.*;
 import org.filesys.server.filesys.AccessMode;
 import org.filesys.server.filesys.FileAction;
 import org.filesys.server.filesys.FileAttribute;
-import org.filesys.client.*;
-import org.filesys.client.admin.*;
-import org.filesys.client.info.*;
 import org.filesys.smb.*;
 import org.filesys.smb.nt.ACE;
 import org.filesys.smb.nt.ACL;
@@ -40,6 +36,9 @@ import org.filesys.smb.nt.SecurityDescriptor;
 import org.filesys.util.MemorySize;
 import org.filesys.util.NameValue;
 import org.filesys.util.NameValueList;
+
+import java.io.PrintStream;
+import java.text.SimpleDateFormat;
 
 /**
  * srvStat Application

@@ -20,10 +20,6 @@
 
 package org.filesys.server.filesys.cache.cluster;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-
 import org.filesys.debug.Debug;
 import org.filesys.server.filesys.DeferFailedException;
 import org.filesys.server.filesys.ExistingOpLockException;
@@ -33,9 +29,13 @@ import org.filesys.server.locking.DeferredRequest;
 import org.filesys.server.locking.LocalOpLockDetails;
 import org.filesys.smb.SMBStatus;
 import org.filesys.smb.server.SMBPacketPool;
-import org.filesys.smb.server.SMBThreadRequest;
 import org.filesys.smb.server.SMBSrvPacket;
 import org.filesys.smb.server.SMBSrvSession;
+import org.filesys.smb.server.SMBThreadRequest;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Per Node File State Data Class

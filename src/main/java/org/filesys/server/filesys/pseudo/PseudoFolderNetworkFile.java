@@ -19,11 +19,11 @@
 
 package org.filesys.server.filesys.pseudo;
 
-import java.io.IOException;
-
 import org.filesys.server.filesys.AccessDeniedException;
 import org.filesys.server.filesys.FileAttribute;
 import org.filesys.server.filesys.NetworkFile;
+
+import java.io.IOException;
 
 
 /**

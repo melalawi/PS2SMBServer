@@ -19,13 +19,13 @@
 
 package org.filesys.oncrpc;
 
-import java.io.IOException;
-import java.net.Socket;
-import java.net.SocketException;
-
 import org.filesys.debug.Debug;
 import org.filesys.server.SocketPacketHandler;
 import org.filesys.util.DataPacker;
+
+import java.io.IOException;
+import java.net.Socket;
+import java.net.SocketException;
 
 /**
  * TCP RPC Packet Handler Class

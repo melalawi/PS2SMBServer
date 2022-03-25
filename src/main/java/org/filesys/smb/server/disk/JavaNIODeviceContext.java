@@ -26,7 +26,7 @@ import org.springframework.extensions.config.ConfigElement;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.*;
+import java.nio.file.Files;
 
 /**
  * Java NIO Filesystem Device Context Class

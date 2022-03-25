@@ -19,11 +19,15 @@
 
 package org.filesys.client;
 
-import java.io.*;
-import java.security.*;
-
-import javax.crypto.*;
-import javax.crypto.spec.*;
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.spec.SecretKeySpec;
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidKeyException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * JCE Password Encryptor Class

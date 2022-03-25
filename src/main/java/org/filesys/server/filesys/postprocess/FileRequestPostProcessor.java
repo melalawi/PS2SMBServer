@@ -17,7 +17,6 @@
 package org.filesys.server.filesys.postprocess;
 
 import org.filesys.server.SrvSession;
-import org.filesys.server.filesys.DiskInterface;
 import org.filesys.server.filesys.NetworkFile;
 
 import java.io.IOException;

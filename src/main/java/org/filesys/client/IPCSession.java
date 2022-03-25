@@ -19,12 +19,12 @@
 
 package org.filesys.client;
 
-import java.io.*;
-
 import org.filesys.smb.PCShare;
 import org.filesys.smb.PacketTypeV1;
 import org.filesys.smb.SMBDeviceType;
 import org.filesys.smb.SMBException;
+
+import java.io.IOException;
 
 /**
  * SMB IPC session class

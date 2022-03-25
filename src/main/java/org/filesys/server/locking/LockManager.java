@@ -20,14 +20,14 @@
 
 package org.filesys.server.locking;
 
-import java.io.IOException;
-
 import org.filesys.locking.FileLock;
 import org.filesys.locking.LockConflictException;
 import org.filesys.locking.NotLockedException;
 import org.filesys.server.SrvSession;
 import org.filesys.server.filesys.NetworkFile;
 import org.filesys.server.filesys.TreeConnection;
+
+import java.io.IOException;
 
 /**
  * Lock Manager Interface

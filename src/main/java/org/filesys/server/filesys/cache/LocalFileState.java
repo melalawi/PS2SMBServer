@@ -19,10 +19,10 @@
 
 package org.filesys.server.filesys.cache;
 
-import java.util.HashMap;
-
 import org.filesys.server.filesys.FileStatus;
 import org.filesys.server.filesys.pseudo.PseudoFileList;
+
+import java.util.HashMap;
 
 /**
  * Local File State Class

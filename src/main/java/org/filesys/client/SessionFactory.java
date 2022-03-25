@@ -19,29 +19,25 @@
 
 package org.filesys.client;
 
-import java.net.*;
-import java.security.*;
-import java.io.*;
-
-import org.filesys.client.info.ServerList;
 import org.filesys.client.admin.AdminSession;
 import org.filesys.client.info.FileInfo;
 import org.filesys.client.info.RAPServerInfo;
+import org.filesys.client.info.ServerList;
 import org.filesys.debug.Debug;
-import org.filesys.netbios.NetBIOSName;
-import org.filesys.netbios.NetBIOSNameList;
-import org.filesys.netbios.NetBIOSSession;
-import org.filesys.netbios.NetworkSession;
-import org.filesys.netbios.RFCNetBIOSProtocol;
+import org.filesys.netbios.*;
 import org.filesys.server.filesys.AccessMode;
 import org.filesys.server.filesys.FileAction;
 import org.filesys.smb.*;
-import org.filesys.smb.PacketTypeV1;
 import org.filesys.smb.dcerpc.info.WorkstationInfo;
 import org.filesys.util.DataPacker;
 import org.filesys.util.HexDump;
 import org.filesys.util.IPAddress;
 import org.filesys.util.StringList;
+
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.security.NoSuchAlgorithmException;
 
 /**
  *  <p>The SessionFactory static class is used to create sessions to remote shared

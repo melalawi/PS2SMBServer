@@ -18,15 +18,15 @@
  */
 package org.filesys.server;
 
+import org.filesys.debug.Debug;
+import org.filesys.smb.server.PacketHandler;
+
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.SocketException;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
-
-import org.filesys.debug.Debug;
-import org.filesys.smb.server.PacketHandler;
 
 /**
  * Channel Session Handler Class

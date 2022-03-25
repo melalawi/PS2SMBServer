@@ -19,10 +19,10 @@
 
 package org.filesys.server.filesys.loader;
 
-import java.util.StringTokenizer;
-
 import org.filesys.util.NameValue;
 import org.filesys.util.NameValueList;
+
+import java.util.StringTokenizer;
 
 /**
  * File Request Class

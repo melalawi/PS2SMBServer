@@ -20,11 +20,11 @@
 
 package org.filesys.server.auth.asn;
 
-import java.io.IOException;
-import java.util.List;
-
 import org.filesys.debug.Debug;
 import org.filesys.util.DataPacker;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  * DER Buffer Class

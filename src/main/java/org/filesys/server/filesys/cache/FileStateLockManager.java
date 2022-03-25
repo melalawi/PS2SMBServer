@@ -19,10 +19,6 @@
 
 package org.filesys.server.filesys.cache;
 
-import java.io.IOException;
-import java.util.Enumeration;
-import java.util.Hashtable;
-
 import org.filesys.locking.FileLock;
 import org.filesys.locking.LockConflictException;
 import org.filesys.locking.NotLockedException;
@@ -40,6 +36,10 @@ import org.filesys.server.thread.TimedThreadRequest;
 import org.filesys.smb.OpLockType;
 import org.filesys.smb.server.SMBSrvPacket;
 import org.filesys.smb.server.SMBSrvSession;
+
+import java.io.IOException;
+import java.util.Enumeration;
+import java.util.Hashtable;
 
 /**
  * File State Lock Manager Class

@@ -19,9 +19,6 @@
 
 package org.filesys.server.filesys.cache.hazelcast;
 
-import java.io.IOException;
-import java.io.Serializable;
-
 import org.filesys.server.filesys.DeferFailedException;
 import org.filesys.server.filesys.cache.cluster.ClusterFileStateCache;
 import org.filesys.server.filesys.cache.cluster.ClusterNode;
@@ -31,6 +28,9 @@ import org.filesys.server.locking.OpLockDetailsAdapter;
 import org.filesys.smb.OpLockType;
 import org.filesys.smb.server.SMBSrvPacket;
 import org.filesys.smb.server.SMBSrvSession;
+
+import java.io.IOException;
+import java.io.Serializable;
 
 /**
  * Remote OpLock Details Class

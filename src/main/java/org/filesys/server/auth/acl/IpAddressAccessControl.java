@@ -19,11 +19,11 @@
 
 package org.filesys.server.auth.acl;
 
-import java.net.InetAddress;
-
 import org.filesys.server.SrvSession;
 import org.filesys.server.core.SharedDevice;
 import org.filesys.util.IPAddress;
+
+import java.net.InetAddress;
 
 /**
  * Ip Address Access Control Class

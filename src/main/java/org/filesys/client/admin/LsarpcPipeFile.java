@@ -19,11 +19,11 @@
 
 package org.filesys.client.admin;
 
-import java.io.*;
-
 import org.filesys.client.IPCSession;
 import org.filesys.smb.SMBException;
 import org.filesys.smb.dcerpc.client.DCEPacket;
+
+import java.io.IOException;
 
 /**
  * LSA RPC Pipe File Class

@@ -19,10 +19,10 @@
 
 package org.filesys.server.auth;
 
-import java.util.Random;
-
 import org.filesys.util.DataPacker;
 import org.filesys.util.HexDump;
+
+import java.util.Random;
 
 /**
  * NTLM1/LanMan SMB Authentication Context Class

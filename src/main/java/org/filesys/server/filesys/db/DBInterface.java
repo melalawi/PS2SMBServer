@@ -19,14 +19,14 @@
 
 package org.filesys.server.filesys.db;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
 import org.filesys.server.config.InvalidConfigurationException;
 import org.filesys.server.filesys.*;
 import org.filesys.smb.server.ntfs.StreamInfo;
 import org.filesys.smb.server.ntfs.StreamInfoList;
 import org.springframework.extensions.config.ConfigElement;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 
 /**
