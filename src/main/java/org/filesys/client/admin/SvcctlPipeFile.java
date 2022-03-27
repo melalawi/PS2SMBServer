@@ -27,7 +27,11 @@ import org.filesys.smb.dcerpc.DCEBufferException;
 import org.filesys.smb.dcerpc.PolicyHandle;
 import org.filesys.smb.dcerpc.client.DCEPacket;
 import org.filesys.smb.dcerpc.client.Svcctl;
-import org.filesys.smb.dcerpc.info.*;
+import org.filesys.smb.dcerpc.info.NTService;
+import org.filesys.smb.dcerpc.info.ServiceConfigInfo;
+import org.filesys.smb.dcerpc.info.ServiceStatusExList;
+import org.filesys.smb.dcerpc.info.ServiceStatusInfo;
+import org.filesys.smb.dcerpc.info.ServiceStatusList;
 import org.filesys.util.StringList;
 
 import java.io.IOException;

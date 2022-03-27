@@ -26,6 +26,7 @@ import org.filesys.ftp.InvalidPathException;
 import org.filesys.oncrpc.nfs.NFSConfigSection;
 import org.filesys.server.config.InvalidConfigurationException;
 import org.filesys.server.filesys.cache.hazelcast.ClusterConfigSection;
+import org.ps2.ui.ClientLogger;
 import org.springframework.extensions.config.ConfigElement;
 import org.springframework.extensions.config.element.ConfigElementAdapter;
 import org.w3c.dom.Document;
@@ -73,8 +74,8 @@ public class XMLServerConfiguration extends SMBOnlyXMLServerConfiguration {
 	/**
 	 * Default constructor
 	 */
-	public XMLServerConfiguration() {
-		super();
+	public XMLServerConfiguration(final ClientLogger clientLogger) {
+		super(clientLogger);
 	}
 
 	/**

@@ -27,7 +27,14 @@ import org.filesys.server.auth.ntlm.NTLM;
 import org.filesys.server.auth.ntlm.Type1NTLMMessage;
 import org.filesys.server.auth.ntlm.Type2NTLMMessage;
 import org.filesys.server.auth.ntlm.Type3NTLMMessage;
-import org.filesys.smb.*;
+import org.filesys.smb.Capability;
+import org.filesys.smb.Dialect;
+import org.filesys.smb.NTTime;
+import org.filesys.smb.PCShare;
+import org.filesys.smb.PacketTypeV1;
+import org.filesys.smb.SMBDate;
+import org.filesys.smb.SMBException;
+import org.filesys.smb.SMBStatus;
 import org.filesys.util.DataPacker;
 
 import java.io.IOException;

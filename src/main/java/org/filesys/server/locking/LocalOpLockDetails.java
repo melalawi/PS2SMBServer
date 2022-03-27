@@ -24,7 +24,11 @@ import org.filesys.debug.Debug;
 import org.filesys.server.filesys.DeferFailedException;
 import org.filesys.smb.OpLockType;
 import org.filesys.smb.SMBStatus;
-import org.filesys.smb.server.*;
+import org.filesys.smb.server.SMBPacketPool;
+import org.filesys.smb.server.SMBParser;
+import org.filesys.smb.server.SMBSrvPacket;
+import org.filesys.smb.server.SMBSrvSession;
+import org.filesys.smb.server.SMBThreadRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;

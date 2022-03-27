@@ -21,7 +21,11 @@ package org.filesys.server.auth.kerberos;
 
 import org.filesys.debug.Debug;
 import org.filesys.server.auth.spnego.OID;
-import org.ietf.jgss.*;
+import org.ietf.jgss.GSSContext;
+import org.ietf.jgss.GSSCredential;
+import org.ietf.jgss.GSSException;
+import org.ietf.jgss.GSSManager;
+import org.ietf.jgss.GSSName;
 
 import java.security.PrivilegedAction;
 

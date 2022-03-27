@@ -25,7 +25,12 @@ import org.filesys.smb.dcerpc.DCEBuffer;
 import org.filesys.smb.dcerpc.DCEBufferException;
 import org.filesys.smb.dcerpc.Srvsvc;
 import org.filesys.smb.dcerpc.client.DCEPacket;
-import org.filesys.smb.dcerpc.info.*;
+import org.filesys.smb.dcerpc.info.ConnectionInfoList;
+import org.filesys.smb.dcerpc.info.ServerFileInfoList;
+import org.filesys.smb.dcerpc.info.ServerInfo;
+import org.filesys.smb.dcerpc.info.SessionInfoList;
+import org.filesys.smb.dcerpc.info.ShareInfo;
+import org.filesys.smb.dcerpc.info.ShareInfoList;
 
 import java.io.IOException;
 

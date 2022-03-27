@@ -19,7 +19,11 @@
 
 package org.filesys.smb.mailslot;
 
-import org.filesys.netbios.*;
+import org.filesys.netbios.NetBIOSDatagram;
+import org.filesys.netbios.NetBIOSDatagramSocket;
+import org.filesys.netbios.NetBIOSName;
+import org.filesys.netbios.NetworkSettings;
+import org.filesys.netbios.RFCNetBIOSProtocol;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;

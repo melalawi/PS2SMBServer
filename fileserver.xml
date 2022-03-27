@@ -8,8 +8,8 @@
         <NFS enable="false"/>
     </servers>
     <debug>
-        <output type="console">
-            <class>org.filesys.debug.ConsoleDebug</class>
+        <output type="ui">
+            <class>org.ps2.ui.ClientLogger</class>
             <logFile>filesrv.log</logFile>
             <append/>
         </output>
@@ -48,13 +48,14 @@
         </diskshare>
     </shares>
 
-    <ui>
+    <ps2>
         <rom>
             <pcpath>D:\ROMS\PS2</pcpath>
             <ps2smbpath>E:\Documents\Repositories\PS2SMBServer\PS2\DVD</ps2smbpath>
+            <library>./Library.json</library>
             <art>D:\ROMS\PS2Art</art>
         </rom>
-    </ui>
+    </ps2>
 
     <security>
         <authenticator>

@@ -23,7 +23,11 @@ import org.filesys.client.info.DiskInfo;
 import org.filesys.client.info.FileInfo;
 import org.filesys.client.info.VolumeInfo;
 import org.filesys.server.filesys.AccessMode;
-import org.filesys.smb.*;
+import org.filesys.smb.DataType;
+import org.filesys.smb.PCShare;
+import org.filesys.smb.PacketTypeV1;
+import org.filesys.smb.SMBException;
+import org.filesys.smb.SMBStatus;
 
 /**
  * SMB core disk session class

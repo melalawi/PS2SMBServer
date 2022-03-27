@@ -19,7 +19,11 @@
 
 package org.filesys.ftp;
 
-import org.filesys.server.config.*;
+import org.filesys.server.config.ConfigId;
+import org.filesys.server.config.ConfigSection;
+import org.filesys.server.config.ConfigurationListener;
+import org.filesys.server.config.InvalidConfigurationException;
+import org.filesys.server.config.ServerConfiguration;
 import org.springframework.extensions.config.ConfigElement;
 import org.springframework.extensions.config.element.GenericConfigElement;
 

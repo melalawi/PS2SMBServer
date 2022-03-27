@@ -26,12 +26,25 @@ import org.filesys.netbios.server.LANAMapper;
 import org.filesys.server.auth.ISMBAuthenticator;
 import org.filesys.server.auth.UserAccount;
 import org.filesys.server.auth.UserAccountList;
-import org.filesys.server.auth.acl.*;
-import org.filesys.server.config.*;
+import org.filesys.server.auth.acl.ACLParseException;
+import org.filesys.server.auth.acl.AccessControl;
+import org.filesys.server.auth.acl.AccessControlList;
+import org.filesys.server.auth.acl.AccessControlParser;
+import org.filesys.server.auth.acl.InvalidACLTypeException;
+import org.filesys.server.config.CoreServerConfigSection;
+import org.filesys.server.config.GlobalConfigSection;
+import org.filesys.server.config.InvalidConfigurationException;
+import org.filesys.server.config.SecurityConfigSection;
+import org.filesys.server.config.ServerConfiguration;
 import org.filesys.server.core.DeviceContextException;
 import org.filesys.server.core.ShareType;
 import org.filesys.server.core.SharedDeviceList;
-import org.filesys.server.filesys.*;
+import org.filesys.server.filesys.DiskDeviceContext;
+import org.filesys.server.filesys.DiskInterface;
+import org.filesys.server.filesys.DiskSharedDevice;
+import org.filesys.server.filesys.FilesystemsConfigSection;
+import org.filesys.server.filesys.SrvDiskInfo;
+import org.filesys.server.filesys.VolumeInfo;
 import org.filesys.server.filesys.cache.FileStateCache;
 import org.filesys.server.filesys.cache.StandaloneFileStateCache;
 import org.filesys.server.thread.ThreadRequestPool;
@@ -42,19 +55,42 @@ import org.filesys.smb.server.SMBSrvSession;
 import org.filesys.smb.server.SMBV1VirtualCircuitList;
 import org.filesys.smb.util.DriveMapping;
 import org.filesys.smb.util.DriveMappingList;
-import org.filesys.util.*;
+import org.filesys.util.IPAddress;
+import org.filesys.util.MemorySize;
+import org.filesys.util.PlatformType;
+import org.filesys.util.StringList;
+import org.filesys.util.X64;
+import org.ps2.ui.ClientLogger;
 import org.springframework.extensions.config.ConfigElement;
 import org.springframework.extensions.config.element.GenericConfigElement;
-import org.w3c.dom.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.*;
-import java.net.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.InterfaceAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Enumeration;
+import java.util.List;
+import java.util.Locale;
+import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -113,11 +149,14 @@ public class SMBOnlyXMLServerConfiguration extends ServerConfiguration {
 	// Pattern match for environment variable tokens
     private Pattern m_envTokens = Pattern.compile("\\$\\{[a-zA-Z0-9_\\.]+\\}");
 
+	private ClientLogger clientLogger;
+
 	/**
 	 * Default constructor
 	 */
-	public SMBOnlyXMLServerConfiguration() {
+	public SMBOnlyXMLServerConfiguration(ClientLogger clientLogger) {
 		super("");
+		this.clientLogger = clientLogger;
 	}
 
 	/**
@@ -1245,8 +1284,10 @@ public class SMBOnlyXMLServerConfiguration extends ServerConfiguration {
                 dbgClass = "org.filesys.debug.ConsoleDebug";
             else if ( outType.equalsIgnoreCase( "file"))
                 dbgClass = "org.filesys.debug.LogFileDebug";
-            else if ( outType.equalsIgnoreCase( "jdk"))
-                dbgClass = "org.filesys.debug.JdkLoggingDebug";
+			else if ( outType.equalsIgnoreCase( "jdk"))
+				dbgClass = "org.filesys.debug.JdkLoggingDebug";
+			else if ( outType.equalsIgnoreCase( "ui"))
+				dbgClass = "org.ps2.ui.ClientLogger";
             else
                 throw new InvalidConfigurationException("Invalid debug output type '" + outType + "'");
         }
@@ -1265,7 +1306,13 @@ public class SMBOnlyXMLServerConfiguration extends ServerConfiguration {
 
 		// Get the parameters for the debug class
 		ConfigElement params = buildConfigElement(elem);
-		debugConfig.setDebug(dbgClass, params);
+
+		if (dbgClass.contains("ClientLogger")) {
+			debugConfig.setDebug("org.filesys.debug.ConsoleDebug", params);
+			Debug.setDebugInterface(clientLogger);
+		} else {
+			debugConfig.setDebug(dbgClass, params);
+		}
 	}
 
 	/**

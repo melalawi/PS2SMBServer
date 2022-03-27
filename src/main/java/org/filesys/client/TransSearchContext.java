@@ -22,7 +22,12 @@ package org.filesys.client;
 import org.filesys.client.info.FileInfo;
 import org.filesys.client.info.ReparsePointFileInfo;
 import org.filesys.server.filesys.FileAttribute;
-import org.filesys.smb.*;
+import org.filesys.smb.FileInfoLevel;
+import org.filesys.smb.NTTime;
+import org.filesys.smb.PCShare;
+import org.filesys.smb.PacketTypeV1;
+import org.filesys.smb.SMBException;
+import org.filesys.smb.TransactBuffer;
 import org.filesys.util.DataBuffer;
 
 import java.io.IOException;

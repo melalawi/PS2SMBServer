@@ -20,7 +20,11 @@
 package org.filesys.client;
 
 import org.filesys.client.info.FileInfo;
-import org.filesys.smb.*;
+import org.filesys.smb.DataType;
+import org.filesys.smb.PCShare;
+import org.filesys.smb.PacketTypeV1;
+import org.filesys.smb.SMBException;
+import org.filesys.smb.SMBStatus;
 import org.filesys.util.DataPacker;
 
 /**

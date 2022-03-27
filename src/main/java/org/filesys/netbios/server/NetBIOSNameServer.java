@@ -20,7 +20,11 @@
 package org.filesys.netbios.server;
 
 import org.filesys.debug.Debug;
-import org.filesys.netbios.*;
+import org.filesys.netbios.NetBIOSName;
+import org.filesys.netbios.NetBIOSNameList;
+import org.filesys.netbios.NetBIOSPacket;
+import org.filesys.netbios.NetworkSettings;
+import org.filesys.netbios.RFCNetBIOSProtocol;
 import org.filesys.server.NetworkServer;
 import org.filesys.server.ServerListener;
 import org.filesys.server.Version;
@@ -33,8 +37,17 @@ import org.filesys.util.HexDump;
 import org.filesys.util.StringList;
 
 import java.io.IOException;
-import java.net.*;
-import java.util.*;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Vector;
 
 /**
  * NetBIOS name server class.

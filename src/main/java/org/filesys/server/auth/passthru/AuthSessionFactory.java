@@ -20,9 +20,19 @@
 package org.filesys.server.auth.passthru;
 
 import org.filesys.debug.Debug;
-import org.filesys.netbios.*;
+import org.filesys.netbios.NetBIOSName;
+import org.filesys.netbios.NetBIOSNameList;
+import org.filesys.netbios.NetBIOSSession;
+import org.filesys.netbios.NetworkSession;
+import org.filesys.netbios.RFCNetBIOSProtocol;
 import org.filesys.server.auth.PasswordEncryptor;
-import org.filesys.smb.*;
+import org.filesys.smb.DataType;
+import org.filesys.smb.Dialect;
+import org.filesys.smb.DialectSelector;
+import org.filesys.smb.PCShare;
+import org.filesys.smb.PacketTypeV1;
+import org.filesys.smb.Protocol;
+import org.filesys.smb.SMBException;
 import org.filesys.util.IPAddress;
 import org.filesys.util.StringList;
 

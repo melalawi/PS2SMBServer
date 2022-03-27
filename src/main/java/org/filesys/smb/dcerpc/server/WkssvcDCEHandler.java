@@ -27,7 +27,11 @@ import org.filesys.smb.dcerpc.DCEBufferException;
 import org.filesys.smb.dcerpc.Wkssvc;
 import org.filesys.smb.dcerpc.info.ServerInfo;
 import org.filesys.smb.dcerpc.info.WorkstationInfo;
-import org.filesys.smb.server.*;
+import org.filesys.smb.server.SMBConfigSection;
+import org.filesys.smb.server.SMBServer;
+import org.filesys.smb.server.SMBSrvException;
+import org.filesys.smb.server.SMBSrvPacket;
+import org.filesys.smb.server.SMBSrvSession;
 
 import java.io.IOException;
 

@@ -35,6 +35,7 @@ import org.filesys.smb.util.DriveMapping;
 import org.filesys.smb.util.DriveMappingList;
 import org.filesys.util.ConsoleIO;
 import org.filesys.util.win32.Win32Utils;
+import org.ps2.ui.ClientLogger;
 
 import java.io.File;
 import java.io.PrintStream;
@@ -87,21 +88,22 @@ public class SMBFileServer implements ServerListener {
 	// Server configuration
 	private ServerConfiguration m_srvConfig;
 
+	private static ClientLogger clientLogger;
+
 	/**
 	 * Start the file server
-	 * 
-	 * @param args an array of command-line arguments
 	 */
-	public static void main(String[] args) {
-
+	public static void main(final ClientLogger logger) {
 		// Create the main file server object
 		SMBFileServer fileServer = new SMBFileServer();
+
+		clientLogger = logger;
 
 		// Loop until shutdown
 		while (m_shutdown == false) {
 
 			// Start the server
-			fileServer.start(args);
+			fileServer.start(new String[0], logger);
 
 			// DEBUG
 			if ( Debug.EnableInfo && m_restart == true) {
@@ -140,7 +142,8 @@ public class SMBFileServer implements ServerListener {
 	 * 
 	 * @param args String[]
 	 */
-	protected void start(String[] args) {
+	protected void start(String[] args, final ClientLogger clientLogger) {
+		this.clientLogger = clientLogger;
 
 		// Command line parameter should specify the configuration file
 		PrintStream out = createOutputStream();
@@ -161,7 +164,7 @@ public class SMBFileServer implements ServerListener {
 			checkPoint(out, CheckPoint.ConfigLoading);
 
 			// Load the configuration
-			m_srvConfig = loadConfiguration(out, args);
+			m_srvConfig = loadConfiguration(clientLogger, out, args);
 
 			// Checkpoint - configuration loaded
 			checkPoint(out, CheckPoint.ConfigLoaded);
@@ -411,7 +414,7 @@ public class SMBFileServer implements ServerListener {
 	 * @return ServerConfiguration
 	 * @exception Exception Error loading the server configuration
 	 */
-	protected ServerConfiguration loadConfiguration(PrintStream out, String[] cmdLineArgs)
+	protected ServerConfiguration loadConfiguration(ClientLogger clientLogger, PrintStream out, String[] cmdLineArgs)
 		throws Exception {
 
 		String fileName = null;
@@ -428,7 +431,7 @@ public class SMBFileServer implements ServerListener {
 		ServerConfiguration srvCfg = null;
 
 		// Create an XML configuration
-		srvCfg = new XMLServerConfiguration();
+		srvCfg = new XMLServerConfiguration(clientLogger);
 		srvCfg.loadConfiguration(fileName);
 
 		// Return the server configuration

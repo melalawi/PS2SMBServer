@@ -29,7 +29,12 @@ import org.filesys.server.SrvSession;
 import org.filesys.server.SrvSessionList;
 import org.filesys.server.auth.AuthenticatorException;
 import org.filesys.server.auth.ClientInfo;
-import org.filesys.server.filesys.*;
+import org.filesys.server.filesys.DeferredPacketException;
+import org.filesys.server.filesys.DiskDeviceContext;
+import org.filesys.server.filesys.NetworkFile;
+import org.filesys.server.filesys.NotifyChange;
+import org.filesys.server.filesys.TooManyConnectionsException;
+import org.filesys.server.filesys.TreeConnection;
 import org.filesys.server.filesys.postprocess.PostRequestProcessor;
 import org.filesys.server.thread.ThreadRequestPool;
 import org.filesys.smb.Dialect;
@@ -45,7 +50,15 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
-import java.util.*;
+import java.util.EnumMap;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Set;
 
 /**
  * <p>

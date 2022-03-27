@@ -22,7 +22,12 @@ package org.filesys.client;
 import org.filesys.debug.Debug;
 import org.filesys.netbios.NetworkSession;
 import org.filesys.netbios.RFCNetBIOSProtocol;
-import org.filesys.smb.*;
+import org.filesys.smb.Capability;
+import org.filesys.smb.Dialect;
+import org.filesys.smb.PCShare;
+import org.filesys.smb.PacketTypeV1;
+import org.filesys.smb.SMBException;
+import org.filesys.smb.SMBStatus;
 import org.filesys.util.DataPacker;
 
 import java.io.IOException;

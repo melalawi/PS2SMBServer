@@ -19,7 +19,12 @@
 
 package org.filesys.client.demo;
 
-import org.filesys.client.*;
+import org.filesys.client.AsynchRequest;
+import org.filesys.client.CIFSDiskSession;
+import org.filesys.client.DiskSession;
+import org.filesys.client.NotifyChange;
+import org.filesys.client.SMBFile;
+import org.filesys.client.SessionFactory;
 import org.filesys.client.smb.DirectoryWatcher;
 import org.filesys.server.filesys.AccessMode;
 import org.filesys.server.filesys.FileAction;

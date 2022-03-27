@@ -19,7 +19,12 @@
 
 package org.filesys.server.auth.kerberos;
 
-import org.filesys.server.auth.asn.*;
+import org.filesys.server.auth.asn.DERBuffer;
+import org.filesys.server.auth.asn.DERGeneralizedTime;
+import org.filesys.server.auth.asn.DERInteger;
+import org.filesys.server.auth.asn.DERObject;
+import org.filesys.server.auth.asn.DEROctetString;
+import org.filesys.server.auth.asn.DERSequence;
 import org.filesys.util.HexDump;
 
 import java.io.IOException;

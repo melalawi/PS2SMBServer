@@ -37,6 +37,7 @@ import org.filesys.smb.util.DriveMapping;
 import org.filesys.smb.util.DriveMappingList;
 import org.filesys.util.ConsoleIO;
 import org.filesys.util.win32.Win32Utils;
+import org.ps2.ui.ClientLogger;
 
 import java.io.File;
 import java.io.PrintStream;
@@ -94,6 +95,8 @@ public class FileServer implements ServerListener {
 	// Main file server thread
 	private Thread m_mainThread;
 
+	private static ClientLogger clientLogger;
+
 	/**
 	 * Shutdown hook thread
 	 */
@@ -125,11 +128,10 @@ public class FileServer implements ServerListener {
 
 	/**
 	 * Start the file server
-	 * 
-	 * @param args an array of command-line arguments
+	 *
 	 */
-	public static void main(String[] args) {
-
+	public static void main(final ClientLogger logger) {
+		clientLogger = logger;
 		// Create the main file server object
 		FileServer fileServer = new FileServer();
 
@@ -137,7 +139,7 @@ public class FileServer implements ServerListener {
 		while (m_shutdown == false) {
 
 			// Start the server
-			fileServer.start(args);
+			fileServer.start(new String[0]);
 
 			// DEBUG
 			if ( Debug.EnableInfo && m_restart == true) {
@@ -601,7 +603,7 @@ public class FileServer implements ServerListener {
 		ServerConfiguration srvConfig = null;
 
 		// Create an XML configuration
-		srvConfig = new XMLServerConfiguration();
+		srvConfig = new XMLServerConfiguration(clientLogger);
 		srvConfig.loadConfiguration(fileName);
 
 		// Return the server configuration

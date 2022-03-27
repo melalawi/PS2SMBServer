@@ -22,7 +22,11 @@ package org.filesys.server.filesys;
 
 import org.filesys.server.SrvSession;
 import org.filesys.server.locking.OplockOwner;
-import org.filesys.smb.*;
+import org.filesys.smb.ImpersonationLevel;
+import org.filesys.smb.NTSecurity;
+import org.filesys.smb.OpLockType;
+import org.filesys.smb.SharingMode;
+import org.filesys.smb.WinNT;
 
 /**
  * File Open Parameters Class

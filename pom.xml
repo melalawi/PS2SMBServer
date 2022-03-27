@@ -2,13 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.filesys</groupId>
-    <artifactId>jfileserver</artifactId>
+    <groupId>org.ps2</groupId>
+    <artifactId>PS2SMBServer</artifactId>
     <packaging>jar</packaging>
-    <version>1.2.1-valuya.3-SNAPSHOT</version>
+    <version>0.1</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
-    <description>Java file server with SMB, FTP/FTPS and NFS support, virtual filesystems, database filesystems</description>
+    <description>PS2SMBServer built on jfileserver</description>
     <url>http://www.filesys.org</url>
 
     <licenses>
@@ -52,6 +52,14 @@
             <version>1.64</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.13.2</version>
+        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls -->
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -63,6 +71,13 @@
             <artifactId>javafx-media</artifactId>
             <version>17.0.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.fxmisc.richtext/richtextfx -->
+        <dependency>
+            <groupId>org.fxmisc.richtext</groupId>
+            <artifactId>richtextfx</artifactId>
+            <version>0.10.9</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.apache.commons</groupId>

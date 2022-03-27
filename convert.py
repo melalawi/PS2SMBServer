@@ -13,10 +13,12 @@ logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
 root_dir = 'D:/ROMS/PS2'
 directory = os.listdir(root_dir)
+completed = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C']
+
 
 def run():
     for file in directory:
-        if file.endswith(".7z"):
+        if not file[0] in completed and file.endswith(".7z"):
             path = os.path.join(root_dir, file)
             logging.info("Next file: " + path)
             unzip(path)
