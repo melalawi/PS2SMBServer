@@ -1,7 +1,7 @@
 # PS2SMBServer
 An open-source SMBv1 application for vending PlayStation 2 ROMs to an ethernet-enabled PS2 via LAN.
 
-![Demo](Demo.mp4)
+https://user-images.githubusercontent.com/6510182/160309987-052b9ce8-60cf-426f-8f58-bf68bd55a006.mp4
 
 ## Introduction
 Loading PS2 ROMs over ethernet is made possible by the custom PS2 software known as [Open-PS2-Loader](https://github.com/ps2homebrew/Open-PS2-Loader). However, in setting up the process I found quite a few limitations:
@@ -13,10 +13,10 @@ Loading PS2 ROMs over ethernet is made possible by the custom PS2 software known
 I spent a few days ironing out these grievances.
 
 ## Description
-* One-click setup of an SMBv1 server
+* One-click setup of an SMBv1 server.
 * Double-click unzipping and copy-pasting of 7z-compressed ROMs from an arbitrary directory to the PS2 SMB directory.
-  * You can set up a network drive and VPN on my home machine containing all of my compressed ROMs
-* Art asset delivery 
+  * I was able to set up a network drive and VPN on my home machine containing all of my compressed ROMs, loading them from any location.
+* Art asset delivery.
 * UI based ROM management.
 
 ## Notes
@@ -26,10 +26,12 @@ I spent a few days ironing out these grievances.
 
 ## TODOs
 * Bug fix and tech debt reduction.
-* Cleaner integration with JFileServer.
+* Much cleaner integration with JFileServer.
 * NetBIOS/DHCP integration. Unfortunately even now my understanding of these relatively older protocols is fuzzy.
 * Support file deletion and cleanup.
+* Built-in VPN suppport.
 * Better documentation.
+
 * General UI refactoring.
 
 ## Dependencies
