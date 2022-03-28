@@ -30,7 +30,7 @@ import com.sun.jna.win32.W32APIOptions;
  */
 public interface Kernel32Ex extends StdCallLibrary {
 
-    Kernel32Ex INSTANCE = (Kernel32Ex) Native.loadLibrary("Kernel32", Kernel32Ex.class, W32APIOptions.UNICODE_OPTIONS);
+    Kernel32Ex INSTANCE = Native.load("Kernel32", Kernel32Ex.class, W32APIOptions.UNICODE_OPTIONS);
 
     /**
      * Set process working set size

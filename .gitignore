@@ -3,3 +3,4 @@ target/
 release.properties
 .idea/workspace.xml
 PS2
+out/

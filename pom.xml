@@ -9,17 +9,16 @@
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>PS2SMBServer built on jfileserver</description>
-    <url>http://www.filesys.org</url>
+    <url>https://github.com/melalawi/PS2SMBServer</url>
 
     <licenses>
         <license>
-            <name>GNU General Lesser Public License (LGPL) version 3.0</name>
-            <url>https://www.gnu.org/licenses/lgpl.txt</url>
+            <name>GNU GENERAL PUBLIC LICENSE v3.0</name>
+            <url>https://www.gnu.org/licenses/gpl.txt</url>
         </license>
     </licenses>
 
     <properties>
-        <!-- Compile for Java 7, default is 5 -->
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
@@ -109,7 +108,7 @@
                 <version>3.1.0</version>
 
                 <executions>
-                    <!-- Build the main jfileserver jar -->
+                    <!-- Build the main PS2SMBServer jar -->
                     <execution>
                         <id>default-jar</id>
                         <phase>package</phase>
@@ -119,7 +118,7 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>org.filesys.app.FileServer</mainClass>
+                                    <mainClass>org.ps2.Main</mainClass>
                                 </manifest>
                             </archive>
 
@@ -283,10 +282,8 @@
 
     <developers>
         <developer>
-            <name>Gary K. Spencer</name>
-            <email>gk.spencer@filesys.org</email>
-            <organization>FileSys.Org</organization>
-            <organizationUrl>http://www.filesys.org</organizationUrl>
+            <name>Mo Alawi</name>
+            <email>mo@itsmo.me</email>
         </developer>
     </developers>
 
