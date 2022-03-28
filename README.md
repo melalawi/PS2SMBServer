@@ -27,7 +27,7 @@ I spent a few days ironing out these grievances.
 ## TODOs
 * Bug fix and tech debt reduction.
 * Much cleaner integration with JFileServer.
-* NetBIOS/DHCP integration. Unfortunately even now my understanding of these relatively older protocols is fuzzy.
+* Proper NetBIOS/DHCP integration as opposed to static IP.
 * Support file deletion and cleanup.
 * Built-in VPN suppport.
 * Better documentation.
