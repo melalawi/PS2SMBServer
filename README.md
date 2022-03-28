@@ -25,6 +25,7 @@ I spent a few days ironing out these grievances.
 * This was a hackathon-style project, and as a result I have accumulated quite a bit of technical debt that I may or may not iron out over time (pull requests, anyone? 👀).
 
 ## TODOs
+* Build fix and compile/release for major platforms
 * Bug fix and tech debt reduction.
 * Much cleaner integration with JFileServer.
 * Proper NetBIOS/DHCP integration as opposed to static IP.
