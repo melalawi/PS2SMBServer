@@ -51,7 +51,7 @@
     <ps2>
         <rom>
             <pcpath>D:\ROMS\PS2</pcpath>
-            <ps2smbpath>E:\Documents\Repositories\PS2SMBServer\PS2\DVD</ps2smbpath>
+            <ps2smbpath>E:\Documents\Repositories\PS2SMBServer\PS2</ps2smbpath>
             <library>./Library.json</library>
             <art>D:\ROMS\PS2Art</art>
         </rom>
