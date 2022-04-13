@@ -17,10 +17,10 @@
 
     <SMB>
         <host name="PS2" domain="FILESRV">
-            <broadcast>192.168.1.255</broadcast>
+            <broadcast>192.168.8.3</broadcast>
             <smbdialects>SMB1</smbdialects>
             <comment>Java File Server</comment>
-            <!-- <bindto adapter="TP-Link Wireless USB Adapter" /> -->
+            <bindto adapter="TP-Link Wireless USB Adapter" />
 
             <Win32Announce interval="5"/>
 

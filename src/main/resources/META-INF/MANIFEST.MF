@@ -1,10 +1,11 @@
 Manifest-Version: 1.0
 Main-Class: org.ps2.Main
-Class-Path: hazelcast-3.10.1.jar commons-io-2.11.0.jar javafx-graphics-1
- 7.0.2.jar javafx-base-17.0.2.jar jna-5.1.0.jar javafx-base-17.0.2-win.j
- ar commons-lang3-3.11.jar jackson-databind-2.13.2.jar jackson-annotatio
- ns-2.13.2.jar commons-compress-1.21.jar javafx-media-17.0.2.jar jna-pla
- tform-5.1.0.jar xz-1.9.jar javafx-media-17.0.2-win.jar javafx-controls-
- 17.0.2.jar javafx-controls-17.0.2-win.jar jackson-core-2.13.2.jar bcpro
- v-jdk15on-1.64.jar javafx-graphics-17.0.2-win.jar commons-text-1.9.jar
+Class-Path: jackson-dataformat-xml-2.13.2.jar hazelcast-3.10.1.jar commo
+ ns-io-2.11.0.jar javafx-graphics-17.0.2.jar javafx-base-17.0.2.jar jna-
+ 5.1.0.jar javafx-base-17.0.2-win.jar commons-lang3-3.11.jar jackson-dat
+ abind-2.13.2.jar jackson-annotations-2.13.2.jar commons-compress-1.21.j
+ ar javafx-media-17.0.2.jar jna-platform-5.1.0.jar xz-1.9.jar javafx-med
+ ia-17.0.2-win.jar javafx-controls-17.0.2.jar javafx-controls-17.0.2-win
+ .jar jackson-core-2.13.2.jar bcprov-jdk15on-1.64.jar javafx-graphics-17
+ .0.2-win.jar commons-text-1.9.jar
 
