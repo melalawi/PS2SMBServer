@@ -43,7 +43,7 @@
         <diskshare name="PS2 Roms">
             <driver>
                 <class>org.filesys.smb.server.disk.JavaNIODiskDriver</class>
-                <LocalPath>./PS2</LocalPath>
+                <LocalPath>E:\Documents\Repositories\PS2SMBServer\PS2</LocalPath>
             </driver>
         </diskshare>
     </shares>
